@@ -45,7 +45,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | email              | string     | null: false                    |
 | nickname           | string     | null: false                    |
 | password           | string     | null: false                    |
-
+| birth              | date       | null: false                    |
 
 ### Association
 
