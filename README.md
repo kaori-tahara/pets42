@@ -61,7 +61,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | --------------------    | ---------- | -------------------------      |
 | title                   | text       | null:false                     |
 | text                    | text       | null:false                     |
-| dog_picture             | text       |                                |
+| dog_picture             | text       | null:false                     |
 | dog_name                | string     | null:false                     |
 | dog_bleed               | string     | null:false                     |
 | dog_age                 | integer    | null:false                     |
