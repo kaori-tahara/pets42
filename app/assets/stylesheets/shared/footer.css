@@ -1,0 +1,41 @@
+.btn-job-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #fd9535;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #fd9535;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+.btn-job-stitch:hover {
+  background: #668ad8;
+  box-shadow: 0px 0px 0px 5px #d86726;
+}
+
+.btn-craving-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #59d15f;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #59d15f;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+.btn-craving-stitch:hover {
+  background: #668ad8;
+  box-shadow: 0px 0px 0px 5px #299237;
+}
