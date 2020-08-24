@@ -8,49 +8,54 @@
    </h2>
    <p class = 'title-explain'>犬のお散歩コミュニティーです</p>
    <p class = 'title-explain'>犬の散歩をして欲しい方と犬の散歩をしたい方を繋げるアプリです</p>
+   <h3 class = ''>このサイトではお散歩を依頼することをお散歩依頼とし、</h3>
+   <h3 class = "">お散歩をしたいとアピールすることをお散歩提供としています。</h3>
   </div>
   <%#画面上部の帯部分バックに写真%>
 
   <%#利用方法%>
   <div class = 'how-to'>
-   <h2>ご利用方法</h2>
+   <h2 class = "how">ご利用方法</h2>
    <ul class = 'how-to-lists'>
      <li class = 'list'>
+       <h3>STEP1</h3>
        <%= image_tag "register.jpg",class:"pets-regi-pic" %>
-       <p>まずは簡単<a href="#" class="register-link">会員登録</a></p>
+       <p class ="regi-ex">まずは簡単<a href="#" class="register-link">会員登録</a></p>
      </li>
      <li>
+       <h3>STEP2</h3>
        <%= image_tag "postig.jpg" ,class:"pets-post-pic"%>
-       <p>散歩の依頼または散歩をしたい旨（散歩の提供）を投稿</p>
+       <p class = "posting">自分の希望を投稿</p>
      </li>
      <li>
+       <h3>STEP3</h3>
        <%= image_tag "waiting.jpg" ,class:"pets-wait-pic"%>
-       <p>あとは希望者を待つだけ</p>
+       <p class = "waiting">あとは希望者を待つだけ</p>
      </li> 
    </ul>
   </div>
   <%#利用方法%>
 
    <%#説明%>
-  <div class = 'text-craving'>
-   <p>一人で歩くよりも犬と一緒に歩きたくありませんか？</p>
-   <p>犬を飼いたくても飼えない！でも触れ合いたい</p>
-   <p>誰かの役にも立ち自分のためにもなるなんて素敵ですよね</p>
+  <div class = 'craving-ex'>
+    <h2 class ='craving-title'>
+    こんな時ありませんか？
+    </h2>
+    <p class = 'craving-explain'>一人で歩くよりも犬と一緒に歩きたくありませんか？</p>
+    <p class = 'craving-explain'>犬を飼いたくても飼えない！でも触れ合いたい</p>
+    <h3 >誰かの役にも立ち自分のためにもなるなんて素敵ですよね</h3>
   </div>
+  
 
-  <div class = 'text-job'>
-   <p>時々お散歩を休みたい時はありませんか？</p>
-   <p>体調が悪くて散歩に連れて行けない時もありますよね</p>
-   <p>気軽に誰かに頼んだっていいんです</p>
-  </div>
+   <div class = 'jobs-explain'>
+    <p class = "jobs-ex-up">時々お散歩を休みたい時はありませんか？</p>
+    <p class ="jobs-ex-mid">体調が悪くて散歩に連れて行けない時もありますよね</p>
+    <h3 class = "jobs-ex-bottom">気軽に誰かに頼んだっていいんです</h3>
+   </div>
   <%#説明%>
 
 
-  <div class = 'right-images'> 
-   <div class = 'up-image'><%= image_tag "logo.png", class: "logo-icon"%></div>
-   <div class = 'middle-image'> <%= image_tag "logo.png", class: "logo-icon"%> </div>
-   <div class = 'bottom-image'> <%= image_tag "logo.png", class: "logo-icon"%> </div>
-  </div>
+  
  
 </div>
 <%= render "shared/footer" %>

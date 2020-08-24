@@ -6,9 +6,10 @@ a {
   background: #f8f8f8;
 }
 
-/*画面後部の帯部分*/
+/*画面上の帯部分*/
 
 .text-job {
+  height:600px;
   width: 100vw;
   background-image: image-url('top.jpg');
   background-size: cover;
@@ -23,6 +24,79 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-.list{
+
+
+.how{
+  padding-left: 40px;
+}
+
+.how-to-lists{
+  display: flex;
+  justify-content: space-around;
   list-style: none;
 }
+
+.regi-ex{
+  padding-left: 40px;
+}
+
+.posting{
+  padding-left: 40px;
+}
+
+.waiting{
+  padding-left: 40px;
+}
+
+.ex-head{
+  padding-left: 40px;
+}
+
+.craving-ex{
+  height:600px;
+  width: 100vw;
+  background-image: image-url('dog_face.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.jobs-explain{
+  height:600px;
+  width: 100vw;
+  background-image: image-url('dog_jump.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 20vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.jobs-ex-up{
+  padding-left: 400px;
+}
+
+.jobs-ex-mid{
+  padding-left: 400px;
+}
+
+.jobs-ex-bottom{
+  padding-left: 400px;
+}
+
+
+
+
+
