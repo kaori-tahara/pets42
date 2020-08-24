@@ -1,14 +1,17 @@
 <%= render "shared/header" %>
+
 <div class = "main">
-    <% @jobs.each do |job| %> 
+  <div class = "job-contents">
+    <ul class='jobs-lists'>
+     <% @jobs.each do |job| %> 
      <li class='list'>
       <%= link_to "/jobs/#{job.id}" do %>
         <div class='item-img-content'>
           <%= image_tag job.dog_picture, class: "item-img" %>
           <%# 交渉ずみならばフラッグをつける表示 %>
-            <% if item.purchase.present? %>  
-          <div class='negotiation'>
-          </div>
+            <% if job.negotiation.present? %>  
+            <div class='negotiation-flag'>
+            </div>
             <%end%>
           <%# //交渉ずみならば表示 %>
         </div>
@@ -16,17 +19,35 @@
           <h3 class='job-title'>
             タイトル <%= job.title %>
           </h3>
-          <div class='job'>
-            <span>販売価格<%= item.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
+          <div class='dog-contents'>
+            <span>ワンちゃんの名前<%= job.dog_name %></span>
+            <p>ワンちゃんの種類<%= job.dog_bleed_id %></p>
           </div>
         </div> 
-      <% end %>
+       <% end %>
       </li>
       <% end %>
+
+      <%# 投稿がない場合のダミー %>
+     <% if @items.length == 0 %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "dog_up.jpg", class: "job-dammy-img" %>
+         <div class='job-info'>
+           <h3 class='job-title'>
+            散歩依頼ボタンから投稿してね！
+           </h3>
+           <div class='dog-contents'>
+            <span>ワンちゃんの名前:犬吉</span>
+            <span>犬種:柴犬</span>
+           </div>
+         </div>
+        <% end %>
+       </li>
+      <% end %>
+      <%# //商品がない場合のダミー %>
+    </ul>
+  </div>
 
 </div>
 <%= render "shared/second_footer" %>
