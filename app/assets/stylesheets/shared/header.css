@@ -4,47 +4,75 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 2vh 5vw;
   display: flex;
   flex-direction: column;
 }
 
 .pets-logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .pets-icon {
   width: 10vw;
-  margin-right: 10vw;
+  margin-right: 5vw;
 }
 
 .nav {
   font-size: 18px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
+  list-style: none;
+  align-items: flex-end;
+  
 
 }
 
-.job-list {
+
+.job-btn {
+  margin-right: 5vw;
+  padding: 0.5em 1em;
   text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+  background: #fd9535;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #fd9535;
+  border: dashed 1px #FFF;
 }
 
-.craving-list {
-  text-decoration: none;
-  color: #333333;
+.job-btn:hover {
+  border: dotted 1px #FFF;
 }
+
+
+
+
+.craving-btn {
+  margin-right: 5vw;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #59d15f;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #59d15f;
+  border: dashed 1px #FFF;
+}
+
+.craving-btn:hover {
+  border: dotted 1px #FFF;
+}
+
+
 
 .lists-right {
   display: flex;

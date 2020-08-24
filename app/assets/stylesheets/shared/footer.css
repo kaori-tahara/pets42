@@ -1,3 +1,26 @@
+.job-explain{
+  padding-left: 32vw;
+}
+
+.job-info{
+  display: flex;
+  justify-content: space-around;
+}
+
+.job-btn{
+  display: inline-block;
+  justify-content: space-around;
+}
+
+.job-craving-btn{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+
+
+
 .btn-job-stitch {
   display: inline-block;
   text-decoration: none;
@@ -15,7 +38,7 @@
 }
 
 .btn-job-stitch:hover {
-  background: #668ad8;
+  background:#ee5f0d(17, 78%, 55%);
   box-shadow: 0px 0px 0px 5px #d86726;
 }
 
@@ -36,6 +59,15 @@
 }
 
 .btn-craving-stitch:hover {
-  background: #668ad8;
+  background: #41bd07;
   box-shadow: 0px 0px 0px 5px #299237;
 }
+
+.footer{
+  display: flex;
+  justify-content: center;
+}
+
+/* .pets{
+  align-items: flex-end;
+} */

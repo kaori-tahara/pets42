@@ -1,23 +1,27 @@
 <%# 下部分 %>
 <div class='footer-contents'>
-  <p class='footer-title'>
-    気軽に頼んで、必要な時に気持ちよく支え合いましょう
-  </p>
-  <h2 class='footer-explain'>
+ <div class = "job-explain">
+   <h2 class='footer-explain'>
     どんな依頼または申し入れがあるか確認してみよう
-  </h2>
-  <div class='jobs-btn'>
-    散歩を頼みたい方の一覧はこちら
-    <a href="#" class="btn-job-stitch">お散歩依頼</a>
-    散歩をしたい方の一覧はこちら
-    <a href="#" class="btn-craving-stitch">お散歩提供</a>
+   </h2>
   </div>
-  <div class = ></div>
+  <div class ="job-info">
+    <p class = "btn-job-text-">
+     散歩を頼みたい方の一覧はこちら
+    </p>
+    <p class = "btn-craving-text"> 
+     散歩をしたい方の一覧はこちら
+    </p>
+   </div>
+   <ul class='job-craving-btn'>
+     <li><%= link_to '依頼一覧', "#", class: "btn-job-stitch " %></li>
+     <li><%= link_to '提供一覧', "#", class: "btn-craving-stitch" %></li>
+   </ul>
 </div>
-
 <%# //下部分 %>
 
+<%#下のロゴ%>
 <div class='footer'>
   <%=  image_tag("logomini.png", class:"logo-white") %>
-  <p>© Pets</p>
+  <%# <p class = "pets">© Pets</p> %>
 </div>
