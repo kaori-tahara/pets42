@@ -1,4 +1,4 @@
-.second_footer {
+.second-footer {
   width: 100%;
   min-width: 800px;
   height: 200px;
@@ -7,19 +7,19 @@
   flex-direction: column;
 }
 
-.second_footer_text_wrap {
+.second-footer-text-wrap {
   margin: 30px 0;
   display: flex;
   justify-content: center;
 }
 
-.second_footer_text {
+.second-footer-text {
   color: #333;
   font-size: 12px;
   margin: 0 10px;
 }
 
-.second_footer_logo {
+.second-footer-logo {
   width: 100px;
   height: 80px;
   margin: 0 auto;

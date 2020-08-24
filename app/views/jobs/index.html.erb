@@ -1,0 +1,32 @@
+<%= render "shared/header" %>
+<div class = "main">
+    <% @jobs.each do |job| %> 
+     <li class='list'>
+      <%= link_to "/jobs/#{job.id}" do %>
+        <div class='item-img-content'>
+          <%= image_tag job.dog_picture, class: "item-img" %>
+          <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if item.purchase.present? %>  
+          <div class='negotiation'>
+          </div>
+            <%end%>
+          <%# //交渉ずみならば表示 %>
+        </div>
+        <div class='job-info'>
+          <h3 class='job-title'>
+            タイトル <%= job.title %>
+          </h3>
+          <div class='job'>
+            <span>販売価格<%= item.price %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div> 
+      <% end %>
+      </li>
+      <% end %>
+
+</div>
+<%= render "shared/second_footer" %>
