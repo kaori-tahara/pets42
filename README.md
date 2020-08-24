@@ -114,6 +114,13 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - belongs_to :user
 - has one situation
 
+## negotiation テーブル
+| Column           | Type       | Options                        |
+| -------------    | ---------- | ------------------------------ |
+| user_id          | references | null: false, foreign_key: true |
+| job_id           | references | null: false, foreign_key: true |
+| craving_id       | references | null: false, foreign_key: true |
+
 ## mypage テーブル
 
 | Column           | Type       | Options                        |
