@@ -29,7 +29,7 @@
       <% end %>
 
       <%# 投稿がない場合のダミー %>
-     <% if @items.length == 0 %>
+     <% if @jobs.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "dog_up.jpg", class: "job-dammy-img" %>
@@ -45,7 +45,7 @@
         <% end %>
        </li>
       <% end %>
-      <%# //商品がない場合のダミー %>
+      <%# //投稿がない場合のダミー %>
     </ul>
   </div>
 
