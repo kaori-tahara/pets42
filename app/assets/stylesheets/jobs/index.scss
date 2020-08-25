@@ -1,13 +1,87 @@
-// transform: skewY(-10deg);
-// これをフラッグにつける
 
-.main{
+
+.job-contents{
   background-image: image-url('backimage.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
 }
 
-.job-contents{
+.job-contener{
+  width: 100%;
+  
+}
 
+.job-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+
+.jobs-lists {
+  width: 100vw;
+  display: flex;
+  // 折り返し表示
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.job-list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: none;
+  list-style: none;
+}
+
+
+.job-img {
+  width: 33vh;
+  height: 33vh;
+  border-radius: 30px;
+  position: relative;
+}
+
+.negotiation-flag {
+  position: absolute;
+  // top: 40%;
+  // width: 100%;
+  text-align: center;
+}
+
+
+
+.job-info {
+  background-color: none;
+  color: black;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.job-title {
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.dog-name {
+  font-size: 2.5vh;
+}
+
+.dog-bleed{
+  font-size: 2.5vh;
+}
+
+.dog-prefecture{
+  font-size: 2.5vh;
 }
