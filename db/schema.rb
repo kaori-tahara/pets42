@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_020710) do
     t.integer "dog_age", null: false
     t.bigint "user_id", null: false
     t.integer "working_hour_id", null: false
-    t.integer "working_date_id", null: false
+    t.date "working_date", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.integer "working_time_id", null: false

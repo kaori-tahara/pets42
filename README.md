@@ -67,8 +67,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | dog_bleed               | string     | null:false                     |
 | dog_age                 | integer    | null:false                     |
 | user                    | references | null: false,foreign_key:true   |
-| working_hour_id        | integer    | null:false                     |
-| working_date_id         | integer    | null:false                     |
+| working_hour_id         | integer    | null:false                     |
+| working_date            | date       | null:false                     |
 | prefecture_id           | integer    | null:false                     |
 | city                    | string     | null:false                     |
 | working_time_id         | integer    | null:false                     |
@@ -84,8 +84,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
-| working_hour_id | integer    | null: false                    |
-| working_date_id  | integer    | null: false                    |
+| working_hour_id  | integer    | null: false                    |
+| working_date     | date       | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | working_time_id  | integer    | null: false                    |
@@ -104,9 +104,9 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | user             | references | null: false, foreign_key: true |
 | title            | string     | null: false                    |
 | text             | text       | null: false                    |
-| experience_id   | integer    | null: false                    |
-| working_hour_id | integer    | null: false                    |
-| working_date_id  | integer    | null: false                    |
+| experience_id    | integer    | null: false                    |
+| working_hour_id  | integer    | null: false                    |
+| working_date     | date       | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | working_time_id  | integer    | null: false                    |
@@ -149,8 +149,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 
 #### 以下はactive_hash使用
- working_hour,
- working_date,   
+ working_hour,  
  prefecture,              
  working_time,
  experience, 
