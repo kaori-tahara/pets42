@@ -1,8 +1,15 @@
-.job-explain{
-  padding-left: 32vw;
+.footer-contents{
+  display: flex;
+  flex-direction: column;
 }
 
-.job-info{
+
+.footer-explain{
+  display: flex;
+  justify-content: center;
+}
+
+.job-infos{
   display: flex;
   justify-content: space-around;
 }

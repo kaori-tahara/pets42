@@ -8,8 +8,9 @@
       <% @jobs.each do |job| %> 
       <li class='job-list'>
        <%= link_to "/jobs/#{job.id}" do %>
-        <div class='job-img-content'>
-          <%= image_tag job.dog_picture, class: "job-img" %>
+        <div class='job-img'>
+          <%= image_tag job.dog_picture, class: "job-img" if job.dog_picture.attached?%>
+          <%= else image_tag "demologo.png"  class:"demo-pic"%>
       <%# 交渉ずみならばフラッグをつける表示 %>
             <% if job.negotiation.present? %>  
             <img src="flag.png" alt = "negotiation" class='negotiation-flag'>
@@ -25,7 +26,7 @@
              名前：<%= job.dog_name %>
            </div>
            <div class ="dog-bleed">
-             犬種：<%= job.dog_bleed_id %>
+             犬種：<%= job.dog_bleed %>
            </div>
            <div class ="dog-prefecture">
              地域：<%= job.prefecture_id %>
@@ -35,36 +36,17 @@
        <% end %>
       </li>
       <% end %>
-
-
       <%# 投稿がない場合のダミー %>
       <% if @jobs.length == 0 %>
        <li class='job-list'>
          <%= image_tag "dog_up.jpg", class: "job-img" %>
-         <img src="flag.png" alt = "negotiation" class='negotiation-flag'>
+         <%# <img src="flag.png" alt = "negotiation" class='negotiation-flag'> %>
          <div class='job-info'>
            <h3 class='job-title'>
             散歩依頼ボタンから投稿！
            </h3>
             <div class='dog-name'>
               名前:犬吉
-            </div>
-            <div class ="dog-bleed">
-              犬種:柴犬
-            </div>
-            <div class ="dog-prefecture">
-              地域:沖縄県
-            </div>
-          </div>
-        </li>
-        <li class='job-list'>
-         <%= image_tag "dog_up.jpg", class: "job-img" %>
-         <div class='job-info'>
-           <h3 class='job-title'>
-            散歩依頼ボタンから投稿！
-           </h3>
-            <div class='dog-name'>
-             名前:犬吉
             </div>
             <div class ="dog-bleed">
               犬種:柴犬

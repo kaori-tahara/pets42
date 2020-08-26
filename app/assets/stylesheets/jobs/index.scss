@@ -36,7 +36,6 @@
 .job-list {
   width: 37vh;
   padding: 1vw;
-  background-color: none;
   list-style: none;
 }
 
@@ -44,34 +43,37 @@
 .job-img {
   width: 33vh;
   height: 33vh;
-  border-radius: 30px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
   position: relative;
 }
 
-.negotiation-flag {
-  position: absolute;
-  // top: 40%;
-  // width: 100%;
-  text-align: center;
-}
+// .negotiation-flag {
+//   position: absolute;
+//   // top: 40%;
+//   // width: 100%;
+//   text-align: center;
+// }
 
 
 
 .job-info {
-  background-color: none;
+  background-color: #f8f8f8;
   color: black;
   padding: 1vw;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .job-title {
   font-size: 2.5vh;
   font-weight: bold;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color:#333333;
+  margin-top:0px;
 }
 
 .dog-name {

@@ -1,4 +1,24 @@
 <%= render "shared/header" %>
+ <div class ="main">
+  <div class = "main-up">
+    <div class = "contents">
+      <div class ="show-pic">
+       <%= image_tag job.dog_picture, class: "job-img" if job.dog_picture.attached?%>
+       <%= else image_tag "demologo.png"  class:"demo-pic"%>
+      </div>
+      <div class = "show-titles">
+        <%= job.user.nickname%>
+        <%= job.title %>
+        <%= job.dog_name %>
+        <%= job.dog_bleed %>
+      </div>
+      <div class = "show-ex">
+      </div>
+      <div class ="show-text">
+      </div>
+
+  </div>
+  </div>
 
 
 
@@ -9,13 +29,8 @@
 
 
 
-
-
-
-
-
-
-
- <%= image_tag "backimage2.jpg", class: "foot-img" %>
-
+  <div class = "main-bottom">
+  <%= image_tag "backimage2.jpg", class: "foot-img" %>
+  </div>
+ </div>
 <%= render "shared/second_footer" %>

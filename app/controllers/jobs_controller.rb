@@ -9,18 +9,18 @@ class JobsController < ApplicationController
     def show
     end
   
-    # def new
-    #   @item = Job.new
-    # end
+    def new
+      @job = Job.new
+    end
   
-    # def create
-    #   @item = Item.new(item_params)
-    #   if @item.save
-    #     redirect_to root_path
-    #   else
-    #     render :new
-    #   end
-    # end
+    def create
+      @job = job.new(job_params)
+      if @job.save
+        redirect_to root_path
+      else
+        render :new
+      end
+    end
   
     # def update
     #   if @item.update(item_params)
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
     #   end
     # end
   
-    # private
+    private
   
     def job_params
       params.require(:job).permit(:title, :text, :dog_picture, :dog_name, :dog_bleed, :dog_age, :working_hours_id, :working_date_id, :prefecture_id, :city, :working_time_id).merge(user_id: current_user.id)
