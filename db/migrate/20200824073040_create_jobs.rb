@@ -10,7 +10,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :dog_bleed,null:false
       t.integer :dog_age,null:false
       t.references :user,null: false,foreign_key:true
-      t.integer :working_hours_id,null:false
+      t.integer :working_hour_id,null:false
       t.integer :working_date_id,null:false
       t.integer :prefecture_id,null:false
       t.string :city,null:false

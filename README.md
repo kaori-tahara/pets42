@@ -52,6 +52,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has_one  :mypage
 - has_many :jobs(散歩依頼)
 - has_many :craving(散歩提供)
+- has many :negotiations
 
 
 
@@ -66,7 +67,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | dog_bleed               | string     | null:false                     |
 | dog_age                 | integer    | null:false                     |
 | user                    | references | null: false,foreign_key:true   |
-| working_hours_id        | integer    | null:false                     |
+| working_hour_id        | integer    | null:false                     |
 | working_date_id         | integer    | null:false                     |
 | prefecture_id           | integer    | null:false                     |
 | city                    | string     | null:false                     |
@@ -76,13 +77,14 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 - belongs_to :user
 - has_one    :situation
+- has_one    :negotiation
 
 
 ## situation テーブル
 
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
-| working_hours_id | integer    | null: false                    |
+| working_hour_id | integer    | null: false                    |
 | working_date_id  | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
@@ -102,8 +104,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | user             | references | null: false, foreign_key: true |
 | title            | string     | null: false                    |
 | text             | text       | null: false                    |
-| experiences_id   | integer    | null: false                    |
-| working_hours_id | integer    | null: false                    |
+| experience_id   | integer    | null: false                    |
+| working_hour_id | integer    | null: false                    |
 | working_date_id  | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
@@ -112,7 +114,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ### Association
 
 - belongs_to :user
-- has one situation
+- has one :situation
+- has one :negotiation
 
 ## negotiation テーブル
 | Column           | Type       | Options                        |
@@ -120,6 +123,12 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | user_id          | references | null: false, foreign_key: true |
 | job_id           | references | null: false, foreign_key: true |
 | craving_id       | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :job
+- belongs_to :craving
+- belongs_to :user
 
 ## mypage テーブル
 
@@ -140,12 +149,12 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 
 #### 以下はactive_hash使用
- working_hours, 
+ working_hour,
  working_date,   
  prefecture,              
  working_time,
- experiences, 
- dog_love     
+ experience, 
+    
 
 
 ## ローカルでの動作方法　あとで書き直し

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_020710) do
     t.string "dog_bleed", null: false
     t.integer "dog_age", null: false
     t.bigint "user_id", null: false
-    t.integer "working_hours_id", null: false
+    t.integer "working_hour_id", null: false
     t.integer "working_date_id", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
