@@ -9,13 +9,13 @@
       <li class='job-list'>
        <%= link_to "/jobs/#{job.id}" do %>
         <div class='job-img'>
-          <%= image_tag job.dog_picture, class: "job-img" if job.dog_picture.attached?%>
-          <%= else image_tag "demologo.png"  class:"demo-pic"%>
+          <% if job.dog_picture.present?%>
+          <%= image_tag job.dog_picture, class: "job-img" %>
+          <% else %>
+          <%= image_tag "demologo.png", class:"demo-pic"%>
+          <%end%>
       <%# 交渉ずみならばフラッグをつける表示 %>
-            <% if job.negotiation.present? %>  
-            <img src="flag.png" alt = "negotiation" class='negotiation-flag'>
-        </div>
-        <%end%>
+            
       <%# //交渉ずみならば表示 %>
         </div>
         <div class='job-info'>

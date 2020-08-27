@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show]
+    # before_action :authenticate_user!, except: [:index, :show]
     before_action :set_job, only: [:show, :destroy, :update]
   
     def index
@@ -14,9 +14,9 @@ class JobsController < ApplicationController
     end
   
     def create
-      @job = job.new(job_params)
+      @job = Job.new(job_params)
       if @job.save
-        redirect_to root_path
+        redirect_to jobs_path
       else
         render :new
       end
@@ -41,11 +41,11 @@ class JobsController < ApplicationController
     private
   
     def job_params
-      params.require(:job).permit(:title, :text, :dog_picture, :dog_name, :dog_bleed, :dog_age, :working_hours_id, :working_date_id, :prefecture_id, :city, :working_time_id).merge(user_id: current_user.id)
+      params.require(:job).permit(:title, :text, :dog_picture, :dog_name, :dog_bleed, :dog_age, :working_hour_id, :working_date, :prefecture_id, :city, :working_time_id).merge(user_id: current_user.id)
     end
   
     def set_job
-      @job = job.find(params[:id])
+      @job = Job.find(params[:id])
     end
   
 end

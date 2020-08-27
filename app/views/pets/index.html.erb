@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class= 'main'>
  
- <%#画面上部の帯部分%>
+ <%#画面上部の部分%>
   <div class = 'text-job'>
    <h2 class ='text-title'>
     自分のためにすることが誰かのためになる
@@ -10,6 +10,27 @@
    <p class = 'title-explain'>犬の散歩をして欲しい方と犬の散歩をしたい方を繋げるアプリです</p>
    <h3 class = ''>このサイトではお散歩を依頼することをお散歩依頼とし、</h3>
    <h3 class = "">お散歩をしたいとアピールすることをお散歩提供としています。</h3>
+   <%# btn %>
+<div class='footer-contents'>
+ <div class = "job-explain">
+   <h2 class='footer-explain'>
+    どんな依頼または申し入れがあるか確認してみよう
+   </h2>
+  </div>
+  <div class ="job-infos">
+    <p class = "btn-job-text">
+     散歩を頼みたい方の一覧はこちら
+    </p>
+    <p class = "btn-craving-text"> 
+     散歩をしたい方の一覧はこちら
+    </p>
+   </div>
+   <ul class='job-craving-btn'>
+     <li><%= link_to '依頼一覧', "/jobs", class: "btn-job-stitch " %></li>
+     <li><%= link_to '提供一覧', "#", class: "btn-craving-stitch" %></li>
+   </ul>
+  </div>
+  <%# //btn %>
   </div>
   <%#画面上部の帯部分バックに写真%>
 
@@ -35,27 +56,7 @@
    </ul>
   </div>
   <%#利用方法%>
-
-   <%#説明%>
-  <div class = 'craving-ex'>
-    <h2 class ='craving-title'>
-    こんな時ありませんか？
-    </h2>
-    <p class = 'craving-explain'>一人で歩くよりも犬と一緒に歩きたくありませんか？</p>
-    <p class = 'craving-explain'>犬を飼いたくても飼えない！でも触れ合いたい</p>
-    <h3 >誰かの役にも立ち自分のためにもなるなんて素敵ですよね</h3>
-  </div>
-  
-
-   <div class = 'jobs-explain'>
-    <p class = "jobs-ex-up">時々お散歩を休みたい時はありませんか？</p>
-    <p class ="jobs-ex-mid">体調が悪くて散歩に連れて行けない時もありますよね</p>
-    <h3 class = "jobs-ex-bottom">気軽に誰かに頼んだっていいんです</h3>
-   </div>
-  <%#説明%>
-
-
-  
- 
 </div>
-<%= render "shared/footer" %>
+<div class='footer'>
+  <%=  image_tag("logomini.png", class:"logo-white") %>
+</div>

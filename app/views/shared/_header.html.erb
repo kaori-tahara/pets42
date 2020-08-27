@@ -6,8 +6,8 @@
     <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
     </div>
     <ul class='lists-left'>
-     <li><%= link_to 'お散歩依頼', "#", class: "job-btn" %></li>
-     <li><%= link_to 'お散歩提供', "#", class: "craving-btn" %></li>
+     <li><%= link_to 'お散歩依頼を投稿', "/jobs/new", class: "job-btn" %></li>
+     <li><%= link_to 'お散歩提供を投稿', "#", class: "craving-btn" %></li>
     </ul>
     <ul class='lists-right'>
     <% if user_signed_in? %>
@@ -15,7 +15,7 @@
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
     <%else%>
        <li><%= link_to 'ログイン',new_user_session_path, class: "login" %></li>
-       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+       <li><%= link_to '新規登録',  new_user_registration_path, class: "sign-up" %></li>
     <%end%>
     </ul>
   </div>

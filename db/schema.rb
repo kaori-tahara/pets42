@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_020710) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "title", null: false
     t.text "text", null: false
-    t.text "dog_picture", null: false
     t.string "dog_name", null: false
     t.string "dog_bleed", null: false
     t.integer "dog_age", null: false

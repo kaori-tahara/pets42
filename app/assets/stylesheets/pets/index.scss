@@ -3,10 +3,8 @@
 }
 
 
-/*画面上の帯部分*/
-
 .text-job {
-  height:600px;
+  height:800px;
   width: 100vw;
   background-image: image-url('top.jpg');
   background-size: cover;
@@ -55,52 +53,86 @@
   padding-left: 40px;
 }
 
-.craving-ex{
-  height:600px;
-  width: 100vw;
-  background-image: image-url('dog_face.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+
+
+// 依頼のボタン以下
+
+.footer-contents{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: black;
+  text-shadow:  0 0 3px rgba(207, 206, 206, 0.9);
+  margin-left: 20%;
 }
 
-.jobs-explain{
-  height:600px;
-  width: 100vw;
-  background-image: image-url('dog_jump.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+
+.footer-explain{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  padding: 5vh 5vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-.jobs-ex-up{
-  padding-left:60%;
+.job-infos{
+  display: flex;
+  justify-content: space-around;
 }
 
-.jobs-ex-mid{
-  padding-left: 60%;
+.job-btn{
+  display: inline-block;
+  justify-content: space-around;
 }
 
-.jobs-ex-bottom{
-  padding-left: 60%;
-  
+.job-craving-btn{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
 }
 
 
 
 
+.btn-job-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #fd9535;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #fd9535;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
 
+.btn-job-stitch:hover {
+  background:#ee5f0d(17, 78%, 55%);
+  box-shadow: 0px 0px 0px 5px #d86726;
+}
+
+.btn-craving-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #59d15f;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #59d15f;
+  border: dashed 1px #FFF;
+  transition: .4s;
+}
+
+.btn-craving-stitch:hover {
+  background: #41bd07;
+  box-shadow: 0px 0px 0px 5px #299237;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+}

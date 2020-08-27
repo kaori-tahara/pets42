@@ -5,7 +5,6 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.timestamps
       t.text :title,null:false
       t.text :text,null:false
-      t.text :dog_picture,null:false 
       t.string :dog_name,null:false
       t.string :dog_bleed,null:false
       t.integer :dog_age,null:false
