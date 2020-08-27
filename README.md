@@ -88,8 +88,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | working_time_id  | integer    | null: false                    |
-| job              | references | null: false, foreign_key: true |
-| craving          | references | null: false, foreign_key: true |
+| job              | references |              foreign_key: true |
+| craving          | references |              foreign_key: true |
 | user             | references | null: false, foreign_key: true |
 
 
