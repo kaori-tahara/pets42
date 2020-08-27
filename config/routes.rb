@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   root to: 'pets#index'
   resources :users, only: [:new, :create]
   resources :pets, only: :index
-  resources :jobs 
-  resources :cravings
+
+  resources :jobs do
+    resources :negotiations
+  end
+
+  resources :cravings do
+    resources :negotiations
+  end
 
 
 end
