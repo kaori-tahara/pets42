@@ -1,0 +1,3 @@
+class CravingnegotiationsController < ApplicationController
+  
+end

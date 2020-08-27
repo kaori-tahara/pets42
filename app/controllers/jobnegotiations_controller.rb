@@ -1,0 +1,2 @@
+class JobnegotiationsController < ApplicationController
+end
