@@ -1,5 +1,16 @@
 class Craving < ApplicationRecord
   belongs_to :user
-  has one :situation
-  has one :negotiation
+  has_one :situation
+  has_one :negotiation
+  has_one_attached :craving_picture
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :working_hour
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :working_time
+  belongs_to_active_hash :experience
+
+
+
+
 end

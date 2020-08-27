@@ -7,11 +7,11 @@
     </div>
     <ul class='lists-left'>
      <li><%= link_to 'お散歩依頼を投稿', "/jobs/new", class: "job-btn" %></li>
-     <li><%= link_to 'お散歩提供を投稿', "#", class: "craving-btn" %></li>
+     <li><%= link_to 'お散歩提供を投稿', "/cravings/new", class: "craving-btn" %></li>
     </ul>
     <ul class='lists-right'>
     <% if user_signed_in? %>
-       <li><%= link_to current_user.nickname, edit_user_password_path, class: "user-nickname" %>さん </li>
+       <li><%= link_to current_user.nickname, edit_user_password_path, class: "user-nickname" %></li>さん
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
     <%else%>
        <li><%= link_to 'ログイン',new_user_session_path, class: "login" %></li>

@@ -1,0 +1,72 @@
+<%= render "shared/header" %>
+ <div class ="main">
+      <div class = "main-up">
+       <h2 class ="show-top">お散歩提供情報</h2>
+       <%#ここに交渉ずみだった場合はすみマークを入れる%>
+       <div class = "contents">
+         <div class ="show-pic">
+          <% if @craving.craving_picture.present?%>
+          <%= image_tag @craving.craving_picture, class: "craving-pic" %>
+          <% else %>
+          <%= image_tag "demologo.png", class:"demo-pic"%>
+          <%end%>
+         </div>
+         <div class = "show-titles">
+           <%= @craving.user.nickname%>さんのお散歩可能情報です
+           <div>
+           タイトル<%= @craving.title %>
+           </div>
+         </div>
+        </div>
+      </div>
+
+      <div class ="main-middle">
+        <div class = "show-ex">
+         <h2>散歩の詳細情報</h2>
+         <div class="w-expe">
+         犬の飼育経験<%= @craving.experience.name %>
+         </div>
+         <div class ="w-date">
+         希望日時<%=@craving.working_date%>
+         </div>
+         <div class ="w-hour">
+         お散歩可能時間<%=@craving.working_hour.name%>
+         </div>
+         <div class ="w-time">
+         お散歩可能時間帯<%=@craving.working_time.name%>
+         </div>
+         <div class ="w-pref"> 
+         都道府県<%= @craving.prefecture.name %>
+         </div>
+         <div class="w-city">
+         市町村<%= @craving.city%>
+         </div>
+        </div>
+         <div class ="show-text">
+           <div><%= @craving.user.nickname%>さんからのメッセージ</div>
+         </div>
+         <div>
+         <%= @craving.text%>
+         </div>
+         </div>
+        </div>
+      </div>
+   </div>
+
+    <% if user_signed_in? && current_user.id == @craving.user_id %>
+    <%= link_to '編集', edit_job_path(@craving.id), method: :get, class: "cr-edit" %>
+    <p class='matawa'>または</p>
+    <%= link_to '削除', job_path(@craving.id) , method: :delete, class:'cr-destroy' %>
+    <p class='or'>もしくは</p>
+    <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+    <%# <%else%> 
+      <%# <% if @job.negotiation == nil  %> 
+    <%# <%= link_to '申し込む', item_transactions_path(@item.id), method: :get,class:"item-red-btn"%> 
+      <%# <%end  %>
+    <% end %> 
+
+    <div class = "main-bottom">
+    <%= image_tag "dog_jump.jpg", class: "foot-img" %>
+    </div>
+ </div>
+<%= render "shared/footer" %>

@@ -1,0 +1,65 @@
+<%= render "shared/header" %>
+
+<div class = "craving-main">
+  <div class = "craving-contents">
+    <h2 class = "craving-title">散歩提供一覧</h2>
+   <div class = "craving-contener">
+    <ul class='cravings-lists'>
+      <% @cravings.each do |craving| %> 
+      <li class='craving-list'> 
+       <%= link_to "/cravings/#{craving.id}" do %>
+        <div class='craving-img'>
+          <% if craving.craving_picture.present?%>
+          <%= image_tag craving.craving_picture, class: "craving-pic" %>
+          <% else %>
+          <%= image_tag "craving.png", class:"craving-demo-pic"%>
+          <%end%>
+      <%# 交渉ずみならばフラッグをつける表示 %>
+            
+      <%# //交渉ずみならば表示 %>
+        </div>
+          <div class='cr-info'>
+            <h2 class='cr-title'>
+            タイトル：<%= craving.title %>
+            </h2>
+            <div class='cr-name'>
+             <%= craving.user.nickname %>さんはお散歩に行けます
+            </div>
+            <div class ="cr-date">
+             日にち：<%= craving.working_date %>
+            </div>
+            <div class ="cr-hour">
+             散歩可能時間：<%= craving.working_hour %>
+            </div>
+          </div>
+       </div> 
+      <% end %>
+      </li>
+      <% end %>
+      <%# 投稿がない場合のダミー %>
+      <% if @cravings.length == 0 %>
+       <li class='craving-list'>
+         <%= image_tag "craving.png", class: "job-img" %>
+         <div class='cr-info'>
+           <h2 class='cr-title'>
+            提供依頼ボタンから投稿！
+           </h2>
+            <div class='cr-name'>
+             例）犬吉さんはお散歩にいけます
+            </div>
+            <div class ="cr-date">
+              日にち
+            </div>
+            <div class ="cr-hour">
+              散歩可能時間
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <%# //投稿がない場合のダミー %>
+    </ul>
+   </div>
+  </div>
+
+</div>
+<%= render "shared/footer" %>

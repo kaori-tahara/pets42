@@ -39,7 +39,7 @@ before_action :set_craving, only: [:show, :edit, :destroy, :update]
     private
   
     def craving_params
-      params.require(:craving).permit(:title, :text, :experience_id , :working_hour_id, :working_date, :prefecture_id , :city, :working_time_id).merge(user_id: current_user.id)
+      params.require(:craving).permit(:craving_picture, :title, :text, :experience_id , :working_date,:working_hour_id,:working_time_id, :prefecture_id , :city ).merge(user_id: current_user.id)
     end
   
     def set_craving
