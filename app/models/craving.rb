@@ -1,7 +1,7 @@
 class Craving < ApplicationRecord
   belongs_to :user
   has_one :situation
-  has_one :negotiation
+  has_one :craving_history
   has_one_attached :craving_picture
 
   extend ActiveHash::Associations::ActiveRecordExtensions

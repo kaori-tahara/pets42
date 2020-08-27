@@ -52,7 +52,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has_one  :mypage
 - has_many :jobs(散歩依頼)
 - has_many :craving(散歩提供)
-- has many :negotiations
+- has_many :job_historys
+- has_many :craving_historys
 
 
 
@@ -119,7 +120,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has one :situation
 - has one :negotiation
 
-## JobNegotiation テーブル
+## JobHistory テーブル
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
@@ -132,7 +133,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - belongs_to :user
 
 
-## CravingNegotiation テーブル
+## CravingHistory テーブル
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |

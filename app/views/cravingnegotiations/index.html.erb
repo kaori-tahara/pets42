@@ -1,8 +1,6 @@
-<%= render "shared/header" %>
  <div class ="main">
       <div class = "main-up">
-       <h2 class ="show-top">お散歩提供情報</h2>
-       <%#ここに交渉ずみだった場合はすみマークを入れる%>
+       <h2 class ="show-top">お散歩提供情報の確認</h2>
        <div class = "contents">
          <div class ="show-pic">
           <% if @craving.craving_picture.present?%>
@@ -52,25 +50,18 @@
         </div>
       </div>
    </div>
-     
-   <div class ="cr-offer-btn">
-     <% if user_signed_in? && current_user.id == @craving.user_id %>
-     <%= link_to '編集', edit_job_path(@craving.id), method: :get, class: "cr-edit" %>
-     <p class='matawa'>または</p>
-     <%= link_to '削除', job_path(@craving.id) , method: :delete, class:'cr-destroy' %>
-     <p class='or'>もしくは</p>
-     <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
-     <%else%> 
-         <% if @craving.craving_history == nil  %> 
-            <%= link_to 'この方に散歩を依頼する', craving_negotiations(@craving.id), method: :get,class:"cr-nego-btn"%> 
-            <p class ="">一覧へ戻る</p>
-            <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
-          <%end %>
-     <% end %> 
-    </div>
 
-    <div class = "main-bottom">
-    <%= image_tag "dog_jump.jpg", class: "foot-img" %>
-    </div>
- </div>
-<%= render "shared/footer" %>
+     <div class = "offer-btn">
+      <div class ="attention">
+      この方にお散歩を頼みますか？
+      </div>
+    <%= link_to 'お散歩を頼む！', cravings_path, method: :get, class: "cr-offer" %>
+    <p class='or'>もしくは</p>
+    <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+     </div>
+
+   
+</div>
+
+ <footer class = "main-bottom">
+ </footer>

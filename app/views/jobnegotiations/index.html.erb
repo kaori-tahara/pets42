@@ -1,8 +1,7 @@
 <%= render "shared/header" %>
  <div class ="main">
       <div class = "main-up">
-       <h2 class ="show-top">お散歩依頼情報</h2>
-       <%#ここに交渉ずみだった場合はすみマークを入れる%>
+       <h2 class ="show-top">お散歩依頼情報の確認</h2>
        <div class = "contents">
          <div class ="show-pic">
           <% if @job.dog_picture.present?%>
@@ -61,22 +60,16 @@
       </div>
    </div>
 
-    <% if user_signed_in? && current_user.id == @job.user_id %>
-    <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "job-edit" %>
-    <p class='matawa'>または</p>
-    <%= link_to '削除', job_path(@job.id) , method: :delete, class:'job-destroy' %>
+    <div class = "offer-get">
+     <div class ="attention">
+     このワンちゃんのお散歩をしますか？
+     </div>
+    <%= link_to 'この依頼を受ける！', jobs_path , method: :get, class:'job-offer' %>
     <p class='or'>もしくは</p>
     <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
-    <%else%>
-         <% if @job.job_history == nil  %> 
-            <%= link_to '申し込む', job_negotiations(@job.id), method: :get,class:"job-nego-btn"%> 
-            <p class ="">一覧へ戻る</p>
-            <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
-          <%end %>
-    <% end %> 
-
-    <div class = "main-bottom">
-    <%= image_tag "backimage2.jpg", class: "foot-img" %>
     </div>
- </div>
-<%= render "shared/footer" %>
+   
+</div>
+
+<footer>
+</footer>
