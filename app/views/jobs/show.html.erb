@@ -12,11 +12,21 @@
           <%end%>
          </div>
          <div class = "show-titles">
+           <div>
            <%= @job.user.nickname%>さんの依頼です
+           </div>
+           <div>
            タイトル<%= @job.title %>
+           </div>
+           <div>
            ワンちゃんの名前<%= @job.dog_name %>
+           </div>
+           <div>
            犬種<%= @job.dog_bleed %>
+           </div>
+           <div>
            ワンちゃんの年齢 約<%= @job.dog_age %>歳
+           </div>
          </div>
         </div>
       </div>
@@ -24,15 +34,29 @@
       <div class ="main-middle">
         <div class = "show-ex">
          <h2>依頼詳細</h2>
+         <div>
          希望散歩時間<%= @job.working_hour.name %>
+         </div>
+         <div>
          希望日時<%= @job.working_date%>
+         </div>
+         <div>
          希望時間帯<%=@job.working_time.name%>
+         </div>
+         <div>
          都道府県<%= @job.prefecture.name %>
+         </div>
+         <div>
          市町村<%= @job.city%>
+         </div>
         </div>
         <div class ="show-text">
+         <div>
          <%= @job.user.nickname%>さんからのメッセージ
+         </div>
+         <div>
          <%= @job.text%>
+         </div>
         </div>
       </div>
    </div>
@@ -46,7 +70,7 @@
     <%# <%else%> 
       <%# <% if @job.negotiation == nil  %> 
     <%# <%= link_to '申し込む', item_transactions_path(@item.id), method: :get,class:"item-red-btn"%> 
-      <%# <%end  %>
+      <%# もしくは一覧へ戻る<%end  %>
     <% end %> 
 
     <div class = "main-bottom">
