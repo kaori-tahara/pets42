@@ -89,8 +89,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | working_time_id  | integer    | null: false                    |
-| job_id           | references | null: false, foreign_key: true |
-| craving_id       | references | null: false, foreign_key: true |
+| job              | references | null: false, foreign_key: true |
+| craving          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -120,9 +120,9 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ## negotiation テーブル
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
-| user_id          | references | null: false, foreign_key: true |
-| job_id           | references | null: false, foreign_key: true |
-| craving_id       | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
+| job              | references | null: false, foreign_key: true |
+| craving          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -134,7 +134,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
-| user_id          | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 | nickname         | string     | null: false                    |
 | dog_love_id      | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
