@@ -1,0 +1,110 @@
+<div class = "main">
+ <header class ="new-head">
+  <div class = "left-link">
+  <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
+  </div>
+  <div class ="right-link">
+  <%= link_to '依頼一覧へ戻る', "/jobs", class: "btn-job-stitch " %>
+  </div>
+ </header>
+
+  <div class = "new-contens">
+   <div class = "contens">
+    <h2>編集箇所を記載してください</h2>
+    <%= form_with model:@job, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+     <%#写真%>
+     <div class="img-upload">
+      <div class="bold-text">
+        ワンちゃんの写真
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード※できるだけ添付してください
+        </p>
+        <%= f.file_field :dog_picture,class:"dog-pic" %>
+      </div>
+     </div>
+     <%#写真%>
+     <%#title,text%>
+     <div class="new-items">
+      <div class="bold-text">
+        タイトル
+        <span class="important-mark">必須</span>
+      </div>
+      <%= f.text_field :title, class:"job-title", id:"job-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <div class="job-explain">
+        <div class="bold-text">
+          アピール文
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.text_area :text, class:"job-text", id:"job-text", placeholder:"例）用事があっていつもの時間にお散歩に連れていけないので、よければどなたかお散歩を頼めませんか？等" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+     <%#title,text%>
+     <%#犬の情報%>
+      <div class="dog-detail">
+      <div class="bold-text">ワンちゃんの詳細情報</div>
+      <div class="dog-exp">
+        <div class="bold-text">
+          ワンちゃんの名前
+          <span class="important-mark">必須</span>
+        </div>
+         <%= f.text_field :dog_name, class:"dog_name",id:"dog_name", placeholder:"例）犬太郎等（40文字まで）", maxlength:"40" %>
+        <div class="bold-text">
+          犬種
+          <span class="important-mark">必須</span>
+        </div>
+         <%= f.text_field :dog_bleed,class:"dog_bleed", id:"dog_bleed", placeholder:"例）雑種（40文字まで）", maxlength:"40" %>
+        <div class="bold-text">
+          ワンちゃんの年齢
+          <span class="important-mark">必須</span>
+        </div>
+         約<%= f.number_field :dog_age, class:"dog_age", id:"dog_age"%>歳
+      </div>  
+    </div>
+     <%#犬の情報%>
+      <%#仕事の情報%>
+      <div class="dog-detail">
+      <div class="bold-text">散歩の詳細情報</div>
+      <div class="sampo-exp">
+        <div class="bold-text">
+          どのくらいの時間散歩をして欲しいか
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.collection_select(:working_hour_id, WorkingHour.all, :id, :name, {}, {class:"select-box", id:"working_hour"}) %>
+        <div class="bold-text">
+          希望日時
+          <span class="important-mark">必須</span>
+        </div>
+         <%= f.date_field :working_date, class:"working_date", id:"working_date" %>
+         <div class="bold-text">
+          お散歩希望時間帯
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.collection_select(:working_time_id, WorkingTime.all, :id, :name, {}, {class:"select-box", id:"working_time"}) %>
+        <div class="bold-text">
+          お住まいの都道府県
+          <span class="important-mark">必須</span>
+        </div>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+        <div class="bold-text">
+          お住まいの市町村
+          <span class="important-mark">必須</span>
+        </div>
+         <%= f.text_field :city, class:"city",id:"city", placeholder:"例）神奈川県", maxlength:"20" %>
+      </div>  
+    </div>
+     <%#仕事の情報%>
+     <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "編集を投稿する" ,class:"sampo-btn" %>
+    </div>
+    <%# /下部ボタン %>
+   </div>
+  </div>
+  <%end%>
+
+ <footer> <%= image_tag "logomini.png", class: "logo-img" %>
+ </footer>
+</div>

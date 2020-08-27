@@ -1,36 +1,56 @@
 <%= render "shared/header" %>
  <div class ="main">
-  <div class = "main-up">
-    <div class = "contents">
-      <div class ="show-pic">
-       <%= image_tag job.dog_picture, class: "job-img" if job.dog_picture.attached?%>
-       <%= else image_tag "demologo.png"  class:"demo-pic"%>
+      <div class = "main-up">
+       <h2 class ="show-top">お散歩依頼情報</h2>
+       <%#ここに交渉ずみだった場合はすみマークを入れる%>
+       <div class = "contents">
+         <div class ="show-pic">
+          <% if @job.dog_picture.present?%>
+          <%= image_tag @job.dog_picture, class: "job-img" %>
+          <% else %>
+          <%= image_tag "demologo.png", class:"demo-pic"%>
+          <%end%>
+         </div>
+         <div class = "show-titles">
+           <%= @job.user.nickname%>さんの依頼です
+           タイトル<%= @job.title %>
+           ワンちゃんの名前<%= @job.dog_name %>
+           犬種<%= @job.dog_bleed %>
+           ワンちゃんの年齢 約<%= @job.dog_age %>歳
+         </div>
+        </div>
       </div>
-      <div class = "show-titles">
-        <%= job.user.nickname%>
-        <%= job.title %>
-        <%= job.dog_name %>
-        <%= job.dog_bleed %>
+
+      <div class ="main-middle">
+        <div class = "show-ex">
+         <h2>依頼詳細</h2>
+         希望散歩時間<%= @job.working_hour.name %>
+         希望日時<%= @job.working_date%>
+         希望時間帯<%=@job.working_time.name%>
+         都道府県<%= @job.prefecture.name %>
+         市町村<%= @job.city%>
+        </div>
+        <div class ="show-text">
+         <%= @job.user.nickname%>さんからのメッセージ
+         <%= @job.text%>
+        </div>
       </div>
-      <div class = "show-ex">
-      </div>
-      <div class ="show-text">
-      </div>
+   </div>
 
-  </div>
-  </div>
+    <% if user_signed_in? && current_user.id == @job.user_id %>
+    <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "job-edit" %>
+    <p class='matawa'>または</p>
+    <%= link_to '削除', job_path(@job.id) , method: :delete, class:'job-destroy' %>
+    <p class='or'>もしくは</p>
+    <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+    <%# <%else%> 
+      <%# <% if @job.negotiation == nil  %> 
+    <%# <%= link_to '申し込む', item_transactions_path(@item.id), method: :get,class:"item-red-btn"%> 
+      <%# <%end  %>
+    <% end %> 
 
-
-
-
-
-
-
-
-
-
-  <div class = "main-bottom">
-  <%= image_tag "backimage2.jpg", class: "foot-img" %>
-  </div>
+    <div class = "main-bottom">
+    <%= image_tag "backimage2.jpg", class: "foot-img" %>
+    </div>
  </div>
 <%= render "shared/second_footer" %>
