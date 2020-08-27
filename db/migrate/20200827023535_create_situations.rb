@@ -6,8 +6,9 @@ class CreateSituations < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id,null: false
       t.string  :city,null: false
       t.integer :working_time_id,null: false
-      t.references :job_id,foreign_key: true,null: false
-      t.references  :craving_id,foreign_key: true,null: false
+      t.bigint :job_id,foreign_key: true,null: false
+      t.bigint :craving_id, foreign_key: true,null: false
+      t.integer :user_id, foreign_key: true,null: false
 
 
       t.timestamps

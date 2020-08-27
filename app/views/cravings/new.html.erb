@@ -4,14 +4,14 @@
   <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
   </div>
   <div class ="right-link">
-  <%= link_to '依頼一覧へ戻る', "/jobs", class: "btn-job-stitch " %>
+  <%= link_to '提供一覧へ戻る', "/cravings", class: "btn-job-stitch " %>
   </div>
  </header>
 
   <div class = "new-contens">
    <div class = "contens">
-    <h2>依頼の内容を記載してください</h2>
-    <%= form_with model:@job, local: true do |f| %>
+    <h2>お散歩提供内容を記載してください</h2>
+    <%= form_with model:@craving, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
      <%#写真%>
      <div class="img-upload">
@@ -20,9 +20,9 @@
       </div>
       <div class="click-upload">
         <p>
-          クリックしてファイルをアップロード※できるだけ添付してください
+          クリックしてファイルをアップロード※自分をアピールできる写真を載せてみよう。
         </p>
-        <%= f.file_field :dog_picture,class:"dog-pic" %>
+        <%= f.file_field :craving_picture,class:"craving-pic" %>
       </div>
      </div>
      <%#写真%>
@@ -32,7 +32,7 @@
         タイトル
         <span class="important-mark">必須</span>
       </div>
-      <%= f.text_field :title, class:"job-title", id:"job-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_field :title, class:"craving-title", id:"craving-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
       <div class="job-explain">
         <div class="bold-text">
           アピール文

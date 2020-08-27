@@ -62,7 +62,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | --------------------    | ---------- | -------------------------      |
 | title                   | text       | null:false                     |
 | text                    | text       | null:false                     |
-| dog_picture             | text       | null:false                     |
 | dog_name                | string     | null:false                     |
 | dog_bleed               | string     | null:false                     |
 | dog_age                 | integer    | null:false                     |
@@ -91,6 +90,8 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | working_time_id  | integer    | null: false                    |
 | job              | references | null: false, foreign_key: true |
 | craving          | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
+
 
 ### Association
 
@@ -139,7 +140,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | dog_love_id      | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | text             | text       | null: false                    |
-| picture          | text       |                                |
 
 ### Association
 
@@ -153,6 +153,12 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
  prefecture,              
  working_time,
  experience, 
+
+ #### 以下はactive_strage使用
+ dog_picture
+ craving_picture
+ mypage_picture
+ 
     
 
 

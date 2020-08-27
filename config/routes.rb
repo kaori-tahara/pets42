@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :pets, only: :index
   resources :jobs 
+  resources :cravings
 
 
 end
