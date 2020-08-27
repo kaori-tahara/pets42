@@ -97,6 +97,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 - belongs_to :job
 - belongs_to :craving
+- belongs_to :user
 
 
 ## craving テーブル
@@ -118,16 +119,27 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has one :situation
 - has one :negotiation
 
-## negotiation テーブル
+## JobNegotiation テーブル
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
 | job              | references | null: false, foreign_key: true |
-| craving          | references | null: false, foreign_key: true |
+
 
 ### Association
 
 - belongs_to :job
+- belongs_to :user
+
+
+## CravingNegotiation テーブル
+| Column           | Type       | Options                        |
+| -------------    | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| craving          | references | null: false, foreign_key: true |
+
+### Association
+
 - belongs_to :craving
 - belongs_to :user
 

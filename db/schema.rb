@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_024555) do
+ActiveRecord::Schema.define(version: 2020_08_27_085132) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -64,14 +64,22 @@ ActiveRecord::Schema.define(version: 2020_08_27_024555) do
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
+  create_table "negotiations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "job_id"
+    t.bigint "craving_id"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "situations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "working_hour_id", null: false
     t.date "working_date", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.integer "working_time_id", null: false
-    t.bigint "job_id", null: false
-    t.bigint "craving_id", null: false
+    t.bigint "job_id"
+    t.bigint "craving_id"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
