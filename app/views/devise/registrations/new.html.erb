@@ -1,6 +1,8 @@
 <%= render "shared/second_header"%>
 
-<%= form_with model:@user, class: 'registration-main',local: true do |f| %>
+<%# <%= form_with model:@user, class: 'registration-main',local: true do |f| %> 
+<%= form_for(@user, url: user_registration_path) do |f| %>
+  <%= render "shared/error_messages", resource: @user %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -42,9 +44,7 @@
     <p class='form-info-header'>
       本人確認
     </p>
-    <%# <p class='form-info-text'>
-      安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-    </p> %>
+    
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -87,7 +87,7 @@
     <p class='info-text'>※ 本人情報は正しく入力してください。</p>
   </div>
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "NEXT!" ,class:"next-red-btn" %>
   </div>
 </div>
 <% end %>

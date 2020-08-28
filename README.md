@@ -69,8 +69,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | user                    | references | null: false,foreign_key:true   |
 | working_hour_id         | integer    | null:false                     |
 | working_date            | date       | null:false                     |
-| prefecture_id           | integer    | null:false                     |
-| city                    | string     | null:false                     |
 | working_time_id         | integer    | null:false                     |
 
 ### Association
@@ -79,26 +77,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has_one    :situation
 - has_one    :negotiation
 
-
-## situation テーブル
-
-| Column           | Type       | Options                        |
-| -------------    | ---------- | ------------------------------ |
-| working_hour_id  | integer    | null: false                    |
-| working_date     | date       | null: false                    |
-| prefecture_id    | integer    | null: false                    |
-| city             | string     | null: false                    |
-| working_time_id  | integer    | null: false                    |
-| job              | references |              foreign_key: true |
-| craving          | references |              foreign_key: true |
-| user             | references | null: false, foreign_key: true |
-
-
-### Association
-
-- belongs_to :job
-- belongs_to :craving
-- belongs_to :user
 
 
 ## craving テーブル
@@ -110,8 +88,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | experience_id    | integer    | null: false                    |
 | working_hour_id  | integer    | null: false                    |
 | working_date     | date       | null: false                    |
-| prefecture_id    | integer    | null: false                    |
-| city             | string     | null: false                    |
 | working_time_id  | integer    | null: false                    |
 
 ### Association
@@ -149,14 +125,29 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
-| nickname         | string     | null: false                    |
 | dog_love_id      | integer    | null: false                    |
-| prefecture_id    | integer    | null: false                    |
 | text             | text       | null: false                    |
+
 
 ### Association
 
 - belongs_to :user
+
+## address テーブル
+
+| Column           | Type       | Options                        |
+| -------------    | ---------- | ------------------------------ |
+| user             | references | optional:true                  |
+| zip              | string     | null: false                    |
+| phone            | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
+| city             | string     | null: false                    |
+
+
+### Association
+
+- belongs_to :user
+
 
 
 
@@ -166,6 +157,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
  prefecture,              
  working_time,
  experience, 
+ dog_love
 
  #### 以下はactive_strage使用
  dog_picture
