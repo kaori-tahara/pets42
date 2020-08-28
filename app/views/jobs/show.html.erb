@@ -2,9 +2,13 @@
  <div class ="main">
       <div class = "main-up">
        <h2 class ="show-top">お散歩依頼情報</h2>
-       <%#ここに交渉ずみだった場合はすみマークを入れる%>
        <div class = "contents">
          <div class ="show-pic">
+         <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if @job.job_history.present?%> 
+            <%= image_tag "flag.png"%>
+            <%end%>
+          <%# //交渉ずみならば表示 %>
           <% if @job.dog_picture.present?%>
           <%= image_tag @job.dog_picture, class: "job-img" %>
           <% else %>
@@ -69,8 +73,10 @@
     <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
     <%else%>
          <% if @job.job_history == nil  %> 
-            <%= link_to '申し込む', job_negotiations(@job.id), method: :get,class:"job-nego-btn"%> 
-            <p class ="">一覧へ戻る</p>
+            <%= link_to '申し込む',  job_jobnegotiations_path(@job.id), method: :get,class:"job-nego-btn"%> 
+            <p class ="">または</p>
+            <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+            <%else%>
             <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
           <%end %>
     <% end %> 

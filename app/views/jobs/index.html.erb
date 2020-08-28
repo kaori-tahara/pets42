@@ -14,11 +14,13 @@
           <% else %>
           <%= image_tag "demologo.png", class:"demo-pic"%>
           <%end%>
-      <%# 交渉ずみならばフラッグをつける表示 %>
-            
-      <%# //交渉ずみならば表示 %>
         </div>
         <div class='job-info'>
+          <%# 交渉ずみならばフラッグをつける表示 %>
+          <% if job.job_history.present?%> 
+          <%= image_tag "flag.png"%>
+          <%end%>
+          <%# //交渉ずみならば表示 %>
            <h2 class='job-title'>
             タイトル：<%= job.title %>
            </h2>
@@ -40,7 +42,6 @@
       <% if @jobs.length == 0 %>
        <li class='job-list'>
          <%= image_tag "dog_up.jpg", class: "job-img" %>
-         <%# <img src="flag.png" alt = "negotiation" class='negotiation-flag'> %>
          <div class='job-info'>
            <h3 class='job-title'>
             散歩依頼ボタンから投稿！

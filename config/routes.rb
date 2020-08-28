@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :pets, only: :index
 
   resources :jobs do
-    resources :jobnegotiations
+    resources :jobnegotiations, only: [:index,:create]
   end
 
   resources :cravings do
-    resources :cravingnegotiations
+    resources :cravingnegotiations, only: [:index,:create]
   end
 
 

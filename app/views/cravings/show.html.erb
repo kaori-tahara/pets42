@@ -2,9 +2,13 @@
  <div class ="main">
       <div class = "main-up">
        <h2 class ="show-top">お散歩提供情報</h2>
-       <%#ここに交渉ずみだった場合はすみマークを入れる%>
        <div class = "contents">
          <div class ="show-pic">
+          <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if @craving.craving_history.present?%> 
+            <%= image_tag "flag.png"%>
+            <%end%>
+            <%# //交渉ずみならば表示 %>
           <% if @craving.craving_picture.present?%>
           <%= image_tag @craving.craving_picture, class: "craving-pic" %>
           <% else %>
@@ -55,16 +59,18 @@
      
    <div class ="cr-offer-btn">
      <% if user_signed_in? && current_user.id == @craving.user_id %>
-     <%= link_to '編集', edit_job_path(@craving.id), method: :get, class: "cr-edit" %>
+     <%= link_to '編集', edit_craving_path(@craving.id), method: :get, class: "cr-edit" %>
      <p class='matawa'>または</p>
-     <%= link_to '削除', job_path(@craving.id) , method: :delete, class:'cr-destroy' %>
+     <%= link_to '削除', craving_path(@craving.id) , method: :delete, class:'cr-destroy' %>
      <p class='or'>もしくは</p>
      <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
      <%else%> 
          <% if @craving.craving_history == nil  %> 
-            <%= link_to 'この方に散歩を依頼する', craving_negotiations(@craving.id), method: :get,class:"cr-nego-btn"%> 
-            <p class ="">一覧へ戻る</p>
+            <%= link_to 'この方に散歩を依頼する',craving_cravingnegotiations_path(@craving.id), method: :get,class:"cr-nego-btn"%> 
+            <p class ="">または</p>
             <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+             <%else%> 
+             <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
           <%end %>
      <% end %> 
     </div>

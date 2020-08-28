@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
   end
 
   create_table "craving_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "craving_id"
+    t.integer "craving_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
   end
 
   create_table "job_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "job_id"
+    t.integer "job_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -76,19 +76,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
     t.string "city", null: false
     t.integer "working_time_id", null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
-  end
-
-  create_table "situations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "working_hour_id", null: false
-    t.date "working_date", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.integer "working_time_id", null: false
-    t.integer "job_id"
-    t.integer "craving_id"
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

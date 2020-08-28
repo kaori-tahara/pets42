@@ -14,11 +14,13 @@
           <% else %>
           <%= image_tag "craving.png", class:"craving-demo-pic"%>
           <%end%>
-      <%# 交渉ずみならばフラッグをつける表示 %>
-            
-      <%# //交渉ずみならば表示 %>
         </div>
           <div class='cr-info'>
+            <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if craving.craving_history.present?%> 
+            <%= image_tag "flag.png"%>
+            <%end%>
+            <%# //交渉ずみならば表示 %>
             <h2 class='cr-title'>
             タイトル：<%= craving.title %>
             </h2>

@@ -5,10 +5,10 @@
        <div class = "contents">
          <div class ="show-pic">
           <% if @job.dog_picture.present?%>
-          <%= image_tag @job.dog_picture, class: "job-img" %>
-          <% else %>
-          <%= image_tag "demologo.png", class:"demo-pic"%>
-          <%end%>
+          <%= image_tag @job.dog_picture, class: "job-img"%>
+          <%else %>
+           <%= image_tag "demologo.png", class:"demo-pic"%>
+          <%end %>
          </div>
          <div class = "show-titles">
            <div>
@@ -59,16 +59,29 @@
         </div>
       </div>
    </div>
-
-    <div class = "offer-get">
-     <div class ="attention">
-     このワンちゃんのお散歩をしますか？
-     </div>
-    <%= link_to 'この依頼を受ける！', jobs_path , method: :get, class:'job-offer' %>
-    <p class='or'>もしくは</p>
-    <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+     
+     
+      <%= form_with  id: 'offer-get', class: 'offer-get',local: true do |f| %>
+      <%if @job.job_history == nil %>
+      <div class ="attention">
+       <div>
+       このワンちゃんのお散歩を申し込んでよろしいですか？
+       </div>
+       <div>
+       <%= f.submit "申し込む！" ,class:"job-red-btn" %>
+       </div>
+       <p class='or'>もしくは</p>
+       <div>
+       <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+       </div>
+       <%else%>
+       <div>
+       <%= link_to '一覧へ戻る', jobs_path , class:'job-return-btn' %>
+       </div>
+       <%end%>
     </div>
-   
+      <% end %>
+
 </div>
 
 <footer>

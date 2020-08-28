@@ -51,14 +51,27 @@
       </div>
    </div>
 
-     <div class = "offer-btn">
-      <div class ="attention">
-      この方にお散歩を頼みますか？
-      </div>
-    <%= link_to 'お散歩を頼む！', cravings_path, method: :get, class: "cr-offer" %>
-    <p class='or'>もしくは</p>
-    <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
-     </div>
+
+     <%= form_with  id: 'craving-offer-form', class: 'craving-offer-form',local: true do |f| %>
+      <%if @craving.craving_history == nil %>
+    <div class ="attention">
+         <div class = "offer-btn">
+          この方にお散歩を頼んでよろしいですか？
+         </div>
+         <div>
+         <%= f.submit "お散歩を頼む！" ,class:"craving-red-btn" %>
+         </div>
+        <p class='or'>もしくは</p>
+         <div>
+         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+         </div>
+         <%else%>
+         <div>
+         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+         </div>
+         <%end%>
+    </div>
+      <% end %>
 
    
 </div>
