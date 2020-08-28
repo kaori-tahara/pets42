@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_071028) do
+ActiveRecord::Schema.define(version: 2020_08_28_120221) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -85,6 +85,17 @@ ActiveRecord::Schema.define(version: 2020_08_28_071028) do
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
+  create_table "mypages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "address_id", null: false
+    t.string "dog_love_id", null: false
+    t.text "text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_id"], name: "index_mypages_on_address_id"
+    t.index ["user_id"], name: "index_mypages_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "family_name", null: false
@@ -105,4 +116,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_071028) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "jobs", "users"
+  add_foreign_key "mypages", "addresses"
+  add_foreign_key "mypages", "users"
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
 
   def new
     @user = User.new
@@ -17,6 +18,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @address = Address.new(user_address_params)
    end
+
+
 
   def edit
     @user = User.new(user_params)
@@ -37,8 +40,6 @@ class UsersController < ApplicationController
   def user_address_params
     params.require(:address).permit(:zip, :prefecture, :city, :phone)
   end
-
-
 
 
 end

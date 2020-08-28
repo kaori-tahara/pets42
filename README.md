@@ -54,6 +54,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 - has_many :craving(散歩提供)
 - has_many :job_historys
 - has_many :craving_historys
+- has_one  :address
 
 
 
@@ -125,13 +126,15 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | Column           | Type       | Options                        |
 | -------------    | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
-| dog_love_id      | integer    | null: false                    |
+| dog_love_id      | string     | null: false                    |
 | text             | text       | null: false                    |
+| address          | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
+- has_one :address
 
 ## address テーブル
 
@@ -147,6 +150,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ### Association
 
 - belongs_to :user
+- belongs_to :mypage
 
 
 
