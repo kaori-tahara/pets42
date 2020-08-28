@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   root to: 'pets#index'
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show, :edit]
   resources :pets, only: :index
 
   resources :jobs do
