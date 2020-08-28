@@ -10,4 +10,6 @@ class User < ApplicationRecord
           has_many :job_historys
           has_many :craving_historys
           has_one  :address
+
+          
 end

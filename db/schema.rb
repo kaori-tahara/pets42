@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2020_08_28_071028) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "zip", null: false
-    t.integer "prefecture", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
-    t.integer "phone", null: false
+    t.string "phone", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -92,10 +92,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_071028) do
     t.string "family_kana", null: false
     t.string "nickname", null: false
     t.date "birth", null: false
-    t.integer "zip", null: false
-    t.integer "phone", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

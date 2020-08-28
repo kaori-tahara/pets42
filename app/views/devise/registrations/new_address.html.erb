@@ -1,19 +1,24 @@
 <div>
  <h2>詳細情報の記載をしてください</h2>
  <%= form_for @address do |f| %>
- <%= render "shared/error_messages", resource: @address %>
+ <%= render "shared/error_messages" ,model: f.object%>
   <div>
-  <%=f.text_field :zip ,placeholder:"郵便番号をハイフンを入れて入力"%>
+    <div>郵便番号（ハイフン含む）を入力してください</div><span class="important-mark">必須</span>
+    <%=f.text_field :zip ,placeholder:"郵便番号をハイフンを入れて入力"%>
   </div>
   <div>
-   <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) ,placeholder:"選択してください"%>
+    <div>都道府県を入力してください</div><span class="important-mark">必須</span>
+    <%= f.text_field :prefecture, placeholder:"都道府県を入力してください" %>
   </div>
    <div>
-   <%= f.text_field :city,placeholder:"市町村を入力してください"%>
-   </div>
+      <div>市町村を入力してください</div><span class="important-mark">必須</span>
+     <%= f.text_field :city,placeholder:"市町村を入力してください"%>
+     </div>
    <div>
-   <%= f.text_field :phone,placeholder:"電話番号を入力してください"%>
-   </div>
+       <div>電話番号を入力してください</div><span class="important-mark">必須</span>
+       <%= f.text_field :phone,placeholder:"電話番号を入力してください"%>
+  </div>
+
    <div class="sign-up">
     <%= f.submit "登録する" %>
   </div>
