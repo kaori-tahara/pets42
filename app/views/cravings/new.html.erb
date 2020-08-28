@@ -68,14 +68,12 @@
         <%= f.collection_select(:working_time_id, WorkingTime.all, :id, :name, {}, {class:"select-box", id:"working_time"}) %>
         <div class="bold-text">
           お住まいの都道府県
-          <span class="important-mark">必須</span>
         </div>
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+          <%=  current_user.prefecture.name %>
         <div class="bold-text">
           お住まいの市町村
-          <span class="important-mark">必須</span>
         </div>
-         <%= f.text_field :city, class:"city",id:"city", placeholder:"例）神奈川県", maxlength:"20" %>
+         <%= current_user.city %>
       </div>  
     </div>
      <%#仕事の情報%>

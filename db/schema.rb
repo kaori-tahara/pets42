@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
     t.integer "experience_id", null: false
     t.integer "working_hour_id", null: false
     t.date "working_date", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
     t.integer "working_time_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -72,8 +70,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
     t.bigint "user_id", null: false
     t.integer "working_hour_id", null: false
     t.date "working_date", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
     t.integer "working_time_id", null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
@@ -85,6 +81,10 @@ ActiveRecord::Schema.define(version: 2020_08_28_010604) do
     t.string "family_kana", null: false
     t.string "nickname", null: false
     t.date "birth", null: false
+    t.integer "zip", null: false
+    t.integer "phone", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

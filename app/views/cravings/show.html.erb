@@ -8,7 +8,7 @@
             <% if @craving.craving_history.present?%> 
             <%= image_tag "flag.png"%>
             <%end%>
-            <%# //交渉ずみならば表示 %>
+          <%# //交渉ずみならば表示 %>
           <% if @craving.craving_picture.present?%>
           <%= image_tag @craving.craving_picture, class: "craving-pic" %>
           <% else %>
@@ -40,10 +40,10 @@
          お散歩可能時間帯<%=@craving.working_time.name%>
          </div>
          <div class ="w-pref"> 
-         都道府県<%= @craving.prefecture.name %>
+         都道府県<%= @craving.user.prefecture.name %>
          </div>
          <div class="w-city">
-         市町村<%= @craving.city%>
+         市町村<%= @craving.user.city%>
          </div>
         </div>
          <div class ="show-text">
