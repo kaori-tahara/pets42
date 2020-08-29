@@ -2,42 +2,18 @@
   box-sizing: border-box;
 }
 
-.top-page-header {
-  width: 100vw;
-  padding: 2vh 5vw;
-  display: flex;
-  flex-direction: column;
 
-}
-
-.pets-logo {
-  display: flex;
-  align-items: center;
-}
 
 .pets-icon {
   width: 10vw;
   margin-right: 5vw;
 }
 
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
 
 
-}
 
-.lists-left {
-  display: flex;
-  min-width: 200px;
-  list-style: none;
-  align-items: flex-end;
 
-}
+
 
 .job-btn {
   display: inline-block;
@@ -74,33 +50,3 @@
 
 
 
-.lists-right {
-  display: flex;
-  list-style: none;
-  align-items: flex-end;
-}
-
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
-}
-
-
-.logout {
-  text-decoration: none;
-  color: #333333;
-}
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.sign-up {
-  text-decoration: none;
-  color: #333333;
-}

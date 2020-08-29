@@ -86,10 +86,12 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
   end
 
   create_table "mypages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "address_id"
-    t.string "dog_love_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "address_id", null: false
+    t.integer "dog_love_id", null: false
     t.text "text", null: false
+    t.integer "job_id", null: false
+    t.integer "craving_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["address_id"], name: "index_mypages_on_address_id"
