@@ -1,30 +1,28 @@
 class UsersController < ApplicationController
   
 
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to root_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
    def show
-    @user = User.new(user_params)
-    @address = Address.new(user_address_params)
+    @show_mypage = User.find(params[:id]).merge(:address_id)
    end
 
 
 
   def edit
-    @user = User.new(user_params)
-    @address = Address.new(user_address_params)
-    if @user&&@address.save
+    @mypage = Mypage.new(mypage_params)
+    if @mypage.save
       redirect_to root_path
       else
         render :show
@@ -37,9 +35,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :family_name, :first_kana, :family_kana, :email, :nickname, :birth, :password)
   end
 
-  def user_address_params
-    params.require(:address).permit(:zip, :prefecture, :city, :phone)
+  def mypage_params
+    params.require(:mypage).permit(:first_name, :family_name, :first_kana, :family_kana, :email, :nickname, :birth,:zip,:prefecture,:city,:phone,:dog_love_id,:text,:mypage_picture)
   end
+
 
 
 end

@@ -32,6 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
   end
+
  
   protected
  

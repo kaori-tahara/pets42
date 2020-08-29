@@ -49,7 +49,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 ### Association
 
-- has_one  :mypage
+- has_one  :mypage(希望者は作成可能で必須ではない)
 - has_many :jobs(散歩依頼)
 - has_many :craving(散歩提供)
 - has_many :job_historys
