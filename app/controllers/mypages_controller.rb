@@ -1,7 +1,7 @@
 class MypagesController < ApplicationController
   # before_action :not_user, except: [:show]
   def new
-    @mypage = current_user
+    @mypage = Mypage.new
   end
 
   def create
@@ -13,21 +13,22 @@ class MypagesController < ApplicationController
      end
   end
 
-  #  def show
-  #   @mypage = Mypage.where(user_id: current_user.id)
-  #  end
+   def show
+    @mypage = Mypage.find(params[:id])
+    
+   end
 
-  # def edit
-  #   @mypage = Mypage.new(mypage_params)
-  # end
+  def edit
+    @mypage = Mypage.new(mypage_params)
+  end
 
-  # def update
-  #   if @mypage.update(mypage_params)
-  #     redirect_to root_path
-  #     else
-  #       redirect_to edit_mypage_path
-  #     end
-  # end
+  def update
+    if @mypage.update(mypage_params)
+      redirect_to root_path
+      else
+        redirect_to edit_mypage_path
+      end
+  end
 
   private
 

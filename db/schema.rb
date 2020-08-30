@@ -89,8 +89,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
     t.bigint "user_id"
     t.integer "dog_love_id", null: false
     t.text "text", null: false
-    t.integer "job_history_id"
-    t.integer "craving_history_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_mypages_on_user_id"

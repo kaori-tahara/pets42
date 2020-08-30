@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   
   root to: 'pets#index'
-  resources :mypages
+  
   resources :pets, only: :index
 
   resources :jobs do
@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   resources :cravings do
     resources :cravingnegotiations, only: [:index,:create]
   end
+
+
+  resources :mypages 
+ 
+
+
 
 
 end

@@ -1,0 +1,81 @@
+<header>
+</header>
+  <%# <%= form_with model:@user, class: 'mypage-show',local: true do |f| %>  
+  <div class = "main">
+     <h2><%= current_user.nickname%>さんのマイページ</h2>
+    <div class ="up-content">
+         <div class="click-upload">
+           <div>
+            <%if @mypage.mypage_picture == nil %>
+            <%= image_tag "demologo.png"%>
+            <%else%>
+            <%= image_tag @mypage.mypage_picture, class:"mypage-pic" %>
+            <%end%>
+            </div>
+         </div>
+        <div>
+          <div>ニックネーム</div>
+          <%= @mypage.user.nickname %>
+        </div>
+        <div>
+          <div>犬愛をアピール</div>
+          <%if @mypage.dog_love_id == nil %>
+           <%="まだ記載がありません"%>
+          <%else%>
+          <%= @mypage.dog_love_id.name %>
+          <%end%>
+        </div>
+        <div>
+          <div>自己紹介</div>
+          <div>
+          <%if @mypage.text == nil %>
+          <%="まだ記載がありません"%>
+          <%else%>
+          <%= @mypage.text%>
+          <%end%>
+          </div>
+        </div>
+     </div>
+
+    <div class ="history-past">
+      <div class = "craving_history_past">
+        <div>過去のお散歩実績</div>
+       <ul class ="history_list">
+         <li>
+          <% @mypage.user.craving_history.each do |craving_history| %> 
+           <%if craving_history.present?%>
+            <%=craving_history.craving.working_date%>
+            <%else%>
+           <%= "過去のお散歩実績はありません"%>
+            <%end%>
+          <%end%>
+        </li>
+       </ul>
+      </div>
+      <div class = "job_history_past">
+        <div>過去の依頼実績</div>
+       <ul class ="history_list">
+         <li>
+          <% @mypage.user.job_history.each do |job_history| %> 
+           <%if job_history.present?%>
+            <%=job_history.job.working_date%>
+            <%else%>
+           <%= "過去の依頼実績はありません"%>
+            <%end%>
+          <%end%>
+        </li>
+       </ul>
+      </div>
+    </div>
+
+
+    <div class ="tips">
+    </div>
+    
+     <div class ="back-btn">
+     <%= link_to '戻る', root_path , class:'top-return-btn' %>
+     </div>
+     
+</div>
+<footer>
+</footer>
