@@ -86,15 +86,13 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
   end
 
   create_table "mypages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "address_id"
+    t.bigint "user_id"
     t.integer "dog_love_id", null: false
     t.text "text", null: false
-    t.integer "job_id"
-    t.integer "craving_id"
+    t.integer "job_history_id"
+    t.integer "craving_history_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["address_id"], name: "index_mypages_on_address_id"
     t.index ["user_id"], name: "index_mypages_on_user_id"
   end
 
@@ -118,6 +116,5 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "jobs", "users"
-  add_foreign_key "mypages", "addresses"
   add_foreign_key "mypages", "users"
 end

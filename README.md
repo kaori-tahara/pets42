@@ -49,11 +49,11 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 
 ### Association
 
-- has_one  :mypage(希望者は作成可能で必須ではない)
+- has_one  :mypage
 - has_many :jobs(散歩依頼)
 - has_many :craving(散歩提供)
-- has_many :job_historys
-- has_many :craving_historys
+- has_many :job_histories(交渉)
+- has_many :craving_histories（交渉）
 - has_one  :address
 
 
@@ -75,10 +75,19 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ### Association
 
 - belongs_to :user
-- has_one    :situation
-- has_one    :negotiation
+- has_one    :job_history
+
+## JobHistory テーブル
+| Column           | Type       | Options                        |
+| -------------    | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| job              | references | null: false, foreign_key: true |
 
 
+### Association
+
+- belongs_to :job
+- belongs_to :user
 
 ## craving テーブル
 | Column           | Type       | Options                        |
@@ -94,20 +103,7 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ### Association
 
 - belongs_to :user
-- has one :situation
-- has one :negotiation
-
-## JobHistory テーブル
-| Column           | Type       | Options                        |
-| -------------    | ---------- | ------------------------------ |
-| user             | references | null: false, foreign_key: true |
-| job              | references | null: false, foreign_key: true |
-
-
-### Association
-
-- belongs_to :job
-- belongs_to :user
+- has one :caving_history
 
 
 ## CravingHistory テーブル
@@ -128,13 +124,16 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 | user             | references | null: false, foreign_key: true |
 | dog_love_id      | string     | null: false                    |
 | text             | text       | null: false                    |
-| address          | references | null: false, foreign_key: true |
+| job_id           | references | foreign_key: true              |
+| craving_id       | references | foreign_key: true              |
 
 
 ### Association
 
 - belongs_to :user
-- has_one :address
+- has_many :job_histories
+- has_many :craving_histories
+(履歴の確認をできるようにする)
 
 ## address テーブル
 
@@ -150,11 +149,6 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
 ### Association
 
 - belongs_to :user
-- belongs_to :mypage
-
-
-
-
 
 #### 以下はactive_hash使用
  working_hour,  

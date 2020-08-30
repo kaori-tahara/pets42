@@ -6,4 +6,3 @@ class Experience < ActiveHash::Base
     { id: 4, name: '飼育経験無し' }
   ]
 end
-

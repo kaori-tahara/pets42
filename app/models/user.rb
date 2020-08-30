@@ -4,12 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-          has_one  :mypage
-          has_many :jobs
-          has_many :cravings
-          has_many :job_historys
-          has_many :craving_historys
-          has_one  :address
-
-          
+  has_one  :mypage
+  has_many :jobs
+  has_many :cravings
+  has_many :job_histories
+  has_many :craving_histories
+  has_one  :address
 end
