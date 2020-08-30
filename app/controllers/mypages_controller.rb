@@ -1,22 +1,20 @@
-class UsersController < ApplicationController
-  before_action :not_user, except: [:show]
-
-
-  def new
-    @mypage = Mypage.new
+class MypagesController < ApplicationController
+   # before_action :not_user, except: [:show]
+   def new
+    @mypage = current_user
   end
 
   def create
      @mypage = Mypage.new(mypage_params)
      if @mypage.save
-      redirect_to root_path
+      redirect_to pets_path
       else
-        redirect_to user_path
+        redirect_to new_mypage_path
       end
   end
 
    def show
-    @mypage = Mypage.new
+    @mypage = Mypage.where(user_id: current_user.id)
    end
 
   def edit
@@ -27,7 +25,7 @@ class UsersController < ApplicationController
     if @mypage.update(mypage_params)
       redirect_to root_path
       else
-        redirect_to edit_user_path
+        redirect_to edit_mypage_path
       end
   end
 
@@ -40,11 +38,9 @@ class UsersController < ApplicationController
   end
 
 
-  def not_user
-    unless @user == current_user 
-      redirect_to root_path
-    end
-  end
-
-
+  # def not_user
+  #   unless @user == current_user 
+  #     redirect_to root_path
+  #   end
+  # end
 end

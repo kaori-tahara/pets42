@@ -1,4 +1,4 @@
-class DogLove < ApplicationRecord
+class DogLove < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '犬大好き！動物大好き！' },

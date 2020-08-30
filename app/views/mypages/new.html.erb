@@ -1,0 +1,37 @@
+<header>
+</header>
+<h2><%= current_user.nickname%>さんのマイページ</h2>
+  <%= form_with url:"/mypages/new", method: :get,class: 'mypage-new',local: true do |f| %> 
+   <%# <%= render 'shared/error_messages', model: f.object %>  
+  <div class = "main">
+    <div class ="up-content">
+         <div class="click-upload">
+           <p>
+           クリックしてファイルをアップロード※自分をアピールできる写真を載せてみよう。
+           </p>
+           <div>
+            <%= f.file_field :mypage_picture,class:"mypage-pic" %>
+            </div>
+         </div>
+        <div>
+          <div>犬愛をアピール</div>
+          <div>
+          <%= f.collection_select(:dog_love_id,DogLove.all, :id, :name, {}, {class:"select-box", id:"dog_love"}) %>
+          </div>
+        </div>
+        <div>
+          <div>自己紹介</div>
+          <div>
+          <%= f.text_area :text, class:"introduce-text", placeholder:"例) 犬が大好きで幼い頃から飼育経験があります。等", maxlength:"400",autofocus: true %>
+          </div>
+        </div>
+     </div>
+    <div class ="btn-mypage">
+      <%=f.submit "マイページ登録完了" , class:"fin-btn"%>
+     </div>
+      <% end %>
+
+</div>
+
+<footer>
+</footer>

@@ -5,6 +5,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
 
+  
+
+
+
   def new
     @user = User.new
   end
@@ -31,6 +35,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
+  end
+
+  def after_sign_up_path_for(resource)
+    new_mypage_path
   end
 
  

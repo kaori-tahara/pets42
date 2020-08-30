@@ -7,9 +7,9 @@
     </div>
     <div>
       <div class ="list-left">
-         <%# <% if user_signed_in? && @user == current_user %> 
+         <% if user_signed_in? && @user == current_user %>
             <%= link_to "マイページへ","/users/:id" %>
-         <%# <%end%>   
+         <%end %>  
        </div> 
       <ul class='lists-mid'>
         <li><%= link_to 'お散歩依頼を投稿', "/jobs/new", class: "job-btn" %></li>
