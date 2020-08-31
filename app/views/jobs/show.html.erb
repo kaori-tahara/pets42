@@ -17,7 +17,7 @@
          </div>
          <div class = "show-titles">
            <div>
-           <%= @job.user.nickname%>さんの依頼です
+           <%= link_to @job.user.nickname , mypage_path(@job.user.id)%>さんのお散歩依頼です
            </div>
            <div>
            タイトル<%= @job.title %>

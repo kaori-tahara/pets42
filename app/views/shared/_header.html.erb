@@ -12,8 +12,9 @@
         <li><%= link_to 'お散歩提供を投稿', "/cravings/new", class: "craving-btn" %></li>
       </ul>
       <ul class='lists-right'>
-       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/mypages/:id", class: "user-nickname" %> </li>さん
+        <% if user_signed_in?  %>
+       <li><%=current_user.nickname%></li>さん
+        <li><%= link_to "マイページへ",mypage_path(current_user.id), class: "show-mypage" %> </li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
        <%else%>
         <li><%= link_to 'ログイン',new_user_session_path, class: "login" %></li>

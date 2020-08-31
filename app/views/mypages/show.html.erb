@@ -1,43 +1,75 @@
 <header>
 </header> 
   <div class = "main">
-     <h2><%= current_user.nickname%>さんのマイページ</h2>
+     <h2><%= @mypage.user.nickname%>さんのマイページ</h2>
     <div class ="up-content">
          <div class="click-upload">
-           <div>
-            <%if @mypage.mypage_picture == nil %>
-            <%= image_tag "demologo.png"%>
-            <%else%>
-            <%= image_tag @mypage.mypage_picture, class:"mypage-pic" %>
-            <%end%>
+            <div class="mypage-pic">
+             <%if @mypage.mypage_picture.present? %>
+             <%= image_tag @mypage.mypage_picture %>
+             <%else%>
+             <%= image_tag "logomini.png"%>
+             <%end%>
             </div>
          </div>
-          <div>犬愛をアピール</div>
-          <%if @mypage.dog_love_id == nil %>
-           <%="まだ記載がありません"%>
-          <%else%>
-          <%= @mypage.dog_love_id.name %>
-          <%end%>
-        </div>
+          <div>
+           <div>犬愛をアピール</div>
+           <%= @mypage.dog_love.name %>
+          </div>
         <div>
           <div>自己紹介</div>
           <div>
-          <%if @mypage.text == nil %>
-          <%="まだ記載がありません"%>
-          <%else%>
           <%= @mypage.text%>
-          <%end%>
           </div>
         </div>
      </div>
 
-    <div class ="tips">
+    <div class ="history-past">
+      <div class = "craving_history_past">
+        <div>過去のお散歩実績</div>
+       <ul class ="history_list">
+         <li>
+          <% @craving_history.each do |craving_history| %> 
+           <%if craving_history.present?%>
+            <div><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み</div>
+            <%else%>
+            <div><%= "過去のお散歩実績はありません"%></div>
+            <%end%>
+          <%end%>
+        </li>
+       </ul>
+      </div>
+      <div class = "job_history_past">
+        <div>過去の依頼実績</div>
+       <ul class ="history_list">
+         <li>
+          <% @job_history.each do |job_history| %> 
+           <%if job_history.present?%>
+            <div><%=job_history.created_at.strftime('%Y/%m/%d')%>済み</div>
+            <%else%>
+            <div><%= "過去の依頼実績はありません"%></div>
+            <%end%>
+          <%end%>
+        </li>
+       </ul>
+      </div>
     </div>
-    
-     <div class ="back-btn">
+
+
+  
+
+
+
+     <% if user_signed_in? && current_user.id == @mypage.user_id %>
+     <div class ="link-btn">
+     <%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"mypage-edit-btn"%>
+     <div class="mataha">または</div>
      <%= link_to '戻る', root_path , class:'top-return-btn' %>
+     <%else%>
+     <%= link_to '戻る', root_path , class:'top-return-btn' %>
+     <%end%>
      </div>
      
-</div>
+ </div>
 <footer>
 </footer>

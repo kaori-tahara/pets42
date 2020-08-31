@@ -1,0 +1,92 @@
+<div class = "main">
+ <header class ="new-head">
+  <div class = "left-link">
+  <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
+  </div>
+  <div class ="right-link">
+  <%= link_to '提供一覧へ戻る', "/cravings", class: "btn-craving-stitch " %>
+  </div>
+ </header>
+
+  <div class = "new-contens">
+   <div class = "contens">
+    <h2>変更箇所を記載してください</h2>
+    <%= form_with model:@craving, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+     <%#写真%>
+     <div class="img-upload">
+      <div class="bold-text">
+        アピール写真
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード※自分をアピールできる写真を載せてみよう。
+        </p>
+        <%= f.file_field :craving_picture,class:"craving-pic" %>
+      </div>
+     </div>
+     <%#写真%>
+     <%#title,text%>
+     <div class="title-text">
+      <div class="bold-text">
+        タイトル
+        <span class="important-mark">必須</span>
+      </div>
+      <%= f.text_field :title, class:"craving-title", id:"craving-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <div class="craving-explain">
+        <div class="bold-text">
+          アピール文
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.text_area :text, class:"craving-text", id:"craving-text", placeholder:"例）過去に犬を飼っていましたが、マンションに引越した為飼うことができません。お散歩の大変さも理解しているので、ぜひ手伝わせてください！等" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+     <%#title,text%>
+      <%#仕事の情報%>
+      <div class="craving-detail">
+      <div class="bold-text">散歩の詳細情報</div>
+      <div class="sampo-exp">
+        <div class="bold-text">
+          犬の飼育経験
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.collection_select(:experience_id , Experience.all, :id, :name, {}, {class:"select-box", id:"experience"}) %>
+        <div class="bold-text">
+          希望日時
+          <span class="important-mark">必須</span>
+        </div>
+         <%= f.date_field :working_date, class:"working_date", id:"working_date" %>
+        <div class="bold-text">
+           お散歩可能時間
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.collection_select(:working_hour_id, WorkingHour.all, :id, :name, {}, {class:"select-box", id:"working_hour"}) %>
+         <div class="bold-text">
+          お散歩可能：時間帯
+          <span class="important-mark">必須</span>
+        </div>
+        <%= f.collection_select(:working_time_id, WorkingTime.all, :id, :name, {}, {class:"select-box", id:"working_time"}) %>
+        <div class="bold-text">
+          お住まいの都道府県
+        </div>
+          <%=  current_user.address.prefecture %>
+        <div class="bold-text">
+          お住まいの市町村
+        </div>
+         <%= current_user.address.city %>
+      </div>  
+    </div>
+     <%#仕事の情報%>
+     <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+      <%= f.submit "散歩提供の変更を投稿する" ,class:"sampo-btn" %>
+      </div>
+    <%# /下部ボタン %>
+   </div>
+  </div>
+  <%end%>
+
+ <footer> 
+ <%= image_tag "logomini.png", class: "logo-img" %>
+ </footer>
+</div>

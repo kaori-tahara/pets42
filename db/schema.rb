@@ -45,14 +45,16 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
   end
 
   create_table "craving_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "craving_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "craving_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["craving_id"], name: "index_craving_histories_on_craving_id"
+    t.index ["user_id"], name: "index_craving_histories_on_user_id"
   end
 
   create_table "cravings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "text", null: false
     t.integer "experience_id", null: false
@@ -61,13 +63,16 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
     t.integer "working_time_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cravings_on_user_id"
   end
 
   create_table "job_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "job_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "job_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_job_histories_on_job_id"
+    t.index ["user_id"], name: "index_job_histories_on_user_id"
   end
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -113,6 +118,11 @@ ActiveRecord::Schema.define(version: 2020_08_28_120221) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "craving_histories", "cravings"
+  add_foreign_key "craving_histories", "users"
+  add_foreign_key "cravings", "users"
+  add_foreign_key "job_histories", "jobs"
+  add_foreign_key "job_histories", "users"
   add_foreign_key "jobs", "users"
   add_foreign_key "mypages", "users"
 end

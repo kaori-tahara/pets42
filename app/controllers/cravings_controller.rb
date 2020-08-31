@@ -20,7 +20,7 @@ class CravingsController < ApplicationController
   end
 
   def update
-    if @craving.update(job_params)
+    if @craving.update(craving_params)
       redirect_to cravings_path
     else
       render :edit

@@ -1,5 +1,7 @@
 class MypagesController < ApplicationController
   # before_action :not_user, except: [:show]
+
+
   def new
     @mypage = Mypage.new
   end
@@ -10,25 +12,31 @@ class MypagesController < ApplicationController
       redirect_to pets_path
     else
       redirect_to new_mypage_path
-     end
+    end
   end
 
    def show
-    @mypage = Mypage.find(params[:id])
-    
+    user = User.find(params[:id])
+     @nickname = user.nickname
+     @mypage = user.mypage
+    @job_history = JobHistory.includes(:user).order('created_at DESC')
+    @craving_history = CravingHistory.includes(:user).order('created_at DESC')
    end
 
-  def edit
-    @mypage = Mypage.new(mypage_params)
-  end
+   def edit
+     @mypage = Mypage.find(params[:id])
+   end
+
 
   def update
-    if @mypage.update(mypage_params)
-      redirect_to root_path
+      @mypage = Mypage.find(params[:id])
+     if @mypage.update(mypage_params)
+        redirect_to pets_path
       else
-        redirect_to edit_mypage_path
+        render :edit
       end
   end
+
 
   private
 
@@ -41,4 +49,5 @@ class MypagesController < ApplicationController
   #     redirect_to root_path
   #   end
   # end
+  
 end

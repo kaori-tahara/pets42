@@ -28,8 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
-  def after_sign_up_path_for(_resource)
-    new_mypage_path
+  def after_sign_up_path_for(resource)
+    new_mypage_path(resource)
   end
 
   protected

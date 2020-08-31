@@ -90,13 +90,13 @@
         <div class="bold-text">
           お住まいの市町村
         </div>
-         <%= current_user.city %>
+         <%= current_user.address.city %>
       </div>  
     </div>
      <%#仕事の情報%>
      <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "編集を投稿する" ,class:"sampo-btn" %>
+      <%= f.submit "お散歩依頼変更を投稿する" ,class:"sampo-btn" %>
     </div>
     <%# /下部ボタン %>
    </div>

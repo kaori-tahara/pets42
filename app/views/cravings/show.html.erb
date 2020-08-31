@@ -16,7 +16,7 @@
           <%end%>
          </div>
          <div class = "show-titles">
-           <%= @craving.user.nickname%>さんのお散歩可能情報です
+           <%= link_to @craving.user.nickname ,mypage_path(@craving.user.id)%>さんのお散歩可能情報です
            <div>
            タイトル<%= @craving.title %>
            </div>
