@@ -19,9 +19,10 @@ class MypagesController < ApplicationController
     user = User.find(params[:id])
      @nickname = user.nickname
      @mypage = user.mypage
-    @job_history = JobHistory.includes(:user).order('created_at DESC')
-    @craving_history = CravingHistory.includes(:user).order('created_at DESC')
-   end
+     @craving_history = CravingHistory.where("user = #{user}").order('created_at DESC')
+     @job_history = JobHistory.where("user = #{user}").order('created_at DESC')
+    end
+
 
    def edit
      @mypage = Mypage.find(params[:id])
