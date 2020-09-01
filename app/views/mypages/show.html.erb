@@ -24,41 +24,7 @@
         </div>
      </div>
 
-    <div class ="history-past">
-      <div class = "craving_history_past">
-        <div>過去のお散歩実績</div>
-       <ul class ="history_list">
-         <li>
-          <% @craving_history.each do |craving_history| %> 
-           <%if craving_history == nil %>
-             <div><%= "過去のお散歩実績はありません"%></div>
-             <%else%>
-            <div><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み</div>
-             <%end%>
-          <%end%>
-        </li>
-       </ul>
-      </div>
-      <div class = "job_history_past">
-        <div>過去の依頼実績</div>
-       <ul class ="history_list">
-         <li>
-          <% @job_history.each do |job_history| %> 
-           <%if job_history == nil %> 
-           <div><%= "過去の依頼実績はありません"%></div> 
-           <%else%>
-           <div><%=job_history.created_at.strftime('%Y/%m/%d')%>済み</div>
-            <%end%>
-          <%end%>
-        </li>
-       </ul>
-      </div>
-    </div>
-
-
-  
-
-
+ 
 
      <% if user_signed_in? && current_user.id == @mypage.user_id %>
      <div class ="link-btn">

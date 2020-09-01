@@ -2,7 +2,7 @@
 </header>
 <h2><%= current_user.nickname%>さんのマイページ</h2>
   <%= form_with model:@mypage,class: 'mypage-new',local: true do |f| %> 
-   <%# <%= render 'shared/error_messages', model: f.object %>  
+    <%= render 'shared/error_messages', model: f.object %>  
   <div class = "main">
     <div class ="up-content">
          <div class="click-upload">

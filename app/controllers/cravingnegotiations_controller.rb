@@ -1,6 +1,6 @@
 class CravingnegotiationsController < ApplicationController
   before_action :authenticate_user!
-  # before_action :forbittener
+  before_action :forbittener
 
   def index
     @craving = Craving.find(params[:craving_id])
@@ -21,9 +21,10 @@ class CravingnegotiationsController < ApplicationController
     params.permit(:craving_id).merge(user_id: current_user.id)
   end
 
-  # def forbittener
-  #   @craving = Craving.find(params[:craving_id])
-  #   redirect_to cravings_path if @craving.user_id == current_user.id
-  #   redirect_to cravings_path if @craving.craving_history.present?
-  # end
+  def forbittener
+    @craving = Craving.find(params[:craving_id])
+    redirect_to cravings_path if @craving.user_id == current_user.id
+    redirect_to cravings_path if @craving.craving_history.present?
+  end
+  
 end
