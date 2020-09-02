@@ -1,25 +1,30 @@
 <header class='top-page-header'>
- 
   <div class='nav'>
+    <div class = "lists-left">
     <div class='pets-logo'>
     <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
     </div>
     <div>
-      
-      <ul class='lists-mid'>
+    <% if user_signed_in?  %>
+     <span class ="nickname">ようこそ<%= current_user.nickname  %>さん</span>
+     <%end%>
+     </div>
+     </div>
+
+    <div class = "right">
+      <ul class='li-mid'>
         <li><%= link_to 'お散歩依頼を投稿', "/jobs/new", class: "job-btn" %></li>
         <li><%= link_to 'お散歩提供を投稿', "/cravings/new", class: "craving-btn" %></li>
       </ul>
-      <ul class='lists-right'>
-        <% if user_signed_in?  %>
-       <li><%=current_user.nickname%></li>さん
-        <li><%= link_to "マイページへ",mypage_path(current_user.id), class: "show-mypage" %> </li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
+      <div class='li-right'>
+       <% if user_signed_in?  %>
+        <div><%= link_to image_tag("mypage.png",class: "show-mypage"),mypage_path(current_user.id) %> </div>
+        <div><%= link_to image_tag("logout.png",class: "logout"), destroy_user_session_path, method: :delete%> </div> 
        <%else%>
-        <li><%= link_to 'ログイン',new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録',  new_user_registration_path, class: "sign-up" %></li>
+        <div><%= link_to image_tag("login.png",class: "login"),new_user_session_path %></div>
+        <div><%= link_to  image_tag("reg.png",class: "sign-up"),new_user_registration_path %></div>
        <%end%>
-      </ul>
+      </div>
     </div>
   </div>
 </header>

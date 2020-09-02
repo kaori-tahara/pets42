@@ -1,17 +1,60 @@
-* {
-  box-sizing: border-box;
+.nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+
+}
+
+.li-mid{
+  list-style: none;
+  display: flex;
+}
+
+.li-right{
+  display: flex;
+  margin-left: 15vw;
+  align-items: center;
+}
+
+.show-mypage{
+  width: 6vw;
+  height: auto;
+  margin-right: 3vw;
+}
+
+.logout{
+  width: 6vw;
+  height: auto;
 }
 
 
+.login{
+  width: 6vw;
+  height: auto;
+  margin-right: 3vw;
+}
+
+.sign-up{
+  width: 7vw;
+  height:auto;
+}
+
+
+
+.nickname{
+  color: #454a66;
+  border-radius: 5px;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
 
 .pets-icon {
-  width: 10vw;
-  margin-right: 5vw;
+  width: 8vw;
+  height: auto;
 }
-
-
-
-
 
 
 
@@ -24,6 +67,7 @@
   border: solid 2px #fd9535;
   border-radius: 3px;
   transition: .4s;
+  width: auto;
 }
 
 .job-btn:hover {
@@ -39,6 +83,7 @@
   border: solid 2px #59d15f;
   border-radius: 3px;
   transition: .4s;
+  width: auto;
 }
 
 .craving-btn:hover {

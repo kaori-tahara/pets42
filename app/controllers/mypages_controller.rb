@@ -15,8 +15,8 @@ class MypagesController < ApplicationController
   def show
     user = User.find(params[:id])
     @mypage = user.mypage
-    @craving_histories = CravingHistory.where("user_id = ?", params[:id]).order('created_at DESC')
-    @job_histories = JobHistory.select(:created_at).where("user_id?", params[:id]).order('created_at DESC')
+    @craving_histories = CravingHistory.includes(:user).order('created_at DESC')
+    @job_histories = JobHistory.includes(:user).order('created_at DESC')
    end
 
   def edit

@@ -26,5 +26,4 @@ class CravingnegotiationsController < ApplicationController
     redirect_to cravings_path if @craving.user_id == current_user.id
     redirect_to cravings_path if @craving.craving_history.present?
   end
-  
 end

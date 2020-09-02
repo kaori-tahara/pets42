@@ -21,12 +21,9 @@ class JobnegotiationsController < ApplicationController
     params.permit(:job_id).merge(user_id: current_user.id)
   end
 
-
   def forbitten
     @job = Job.find(params[:job_id])
     redirect_to jobs_path if @job.user_id == current_user.id
     redirect_to jobs_path if @job.job_history.present?
   end
-
 end
-

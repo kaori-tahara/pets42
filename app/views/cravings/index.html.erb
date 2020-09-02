@@ -9,18 +9,22 @@
       <li class='craving-list'> 
        <%= link_to "/cravings/#{craving.id}" do %>
         <div class='craving-img'>
+          <div>
+           <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if craving.craving_history.present?%> 
+            <%= image_tag "flag.png"%>
+            <%end%>
+          </div>
+            <%# //交渉ずみならば表示 %>
+            <div>
           <% if craving.craving_picture.present?%>
           <%= image_tag craving.craving_picture, class: "craving-pic" %>
           <% else %>
           <%= image_tag "craving.png", class:"craving-demo-pic"%>
           <%end%>
+          </div>
         </div>
           <div class='cr-info'>
-            <%# 交渉ずみならばフラッグをつける表示 %>
-            <% if craving.craving_history.present?%> 
-            <%= image_tag "flag.png"%>
-            <%end%>
-            <%# //交渉ずみならば表示 %>
             <h2 class='cr-title'>
             タイトル：<%= craving.title %>
             </h2>

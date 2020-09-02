@@ -24,7 +24,30 @@
         </div>
      </div>
 
- 
+    <div class ="history-past">
+      <div class = "craving_history_past">
+        <div>過去のお散歩実績</div>
+       <ul class ="history_list">
+                <% @craving_histories.each do |craving_history| %> 
+                    <%if @mypage.user_id == craving_history.user_id  %>
+                 <div><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み
+                 </div>
+                <%end%>
+             <%end%>
+       </ul>
+      </div>
+      <div class = "job_history_past">
+        <div>過去の依頼実績</div>
+       <ul class ="history_list">
+           <% @job_histories.each do |job_history| %>  
+             <%if @mypage.user_id == job_history.user_id %>  
+            <div><%=job_history.created_at.strftime('%Y/%m/%d')%>済み
+            </div>
+            <%end%>  
+          <%end%>
+       </ul>
+      </div>
+    </div>
 
      <% if user_signed_in? && current_user.id == @mypage.user_id %>
      <div class ="link-btn">
