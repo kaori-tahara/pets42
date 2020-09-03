@@ -1,13 +1,13 @@
-<div class = "main">
  <header class ="new-head">
   <div class = "left-link">
   <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
   </div>
   <div class ="right-link">
-  <%= link_to '依頼一覧へ戻る', "/jobs", class: "btn-job-stitch " %>
+  <%= link_to '依頼一覧へ戻る', "/jobs", class: "job-back-btn " %>
   </div>
  </header>
 
+<div class = "job-new-main">
   <div class = "new-contens">
    <div class = "contens">
     <h2>依頼の内容を記載してください</h2>
@@ -16,13 +16,10 @@
      <%#写真%>
      <div class="img-upload">
       <div class="bold-text">
-        ワンちゃんの写真
+        ワンちゃんの写真※できるだけ添付してください
       </div>
       <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード※できるだけ添付してください
-        </p>
-        <%= f.file_field :dog_picture,class:"dog-pic" %>
+        <%= f.file_field :dog_picture,class:"field" %>
       </div>
      </div>
      <%#写真%>
@@ -32,77 +29,68 @@
         タイトル
         <span class="important-mark">必須</span>
       </div>
-      <%= f.text_field :title, class:"job-title", id:"job-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_field :title, class:"field", id:"job-titile", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
       <div class="job-explain">
         <div class="bold-text">
           アピール文
           <span class="important-mark">必須</span>
         </div>
-        <%= f.text_area :text, class:"job-text", id:"job-text", placeholder:"例）用事があっていつもの時間にお散歩に連れていけないので、よければどなたかお散歩を頼めませんか？等" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"field", id:"job-text", placeholder:"例）用事があっていつもの時間にお散歩に連れていけないので、よければどなたかお散歩を頼めませんか？等" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
      <%#title,text%>
      <%#犬の情報%>
       <div class="dog-detail">
-      <div class="bold-text">ワンちゃんの詳細情報</div>
+      <h3 class="bold-text">ワンちゃんの詳細情報</h3>
       <div class="dog-exp">
         <div class="bold-text">
           ワンちゃんの名前
           <span class="important-mark">必須</span>
         </div>
-         <%= f.text_field :dog_name, class:"dog_name",id:"dog_name", placeholder:"例）犬太郎等（40文字まで）", maxlength:"40" %>
+         <%= f.text_field :dog_name, class:"field",id:"dog_name", placeholder:"例）犬太郎等（40文字まで）", maxlength:"40" %>
         <div class="bold-text">
           犬種
           <span class="important-mark">必須</span>
         </div>
-         <%= f.text_field :dog_bleed,class:"dog_bleed", id:"dog_bleed", placeholder:"例）雑種（40文字まで）", maxlength:"40" %>
+         <%= f.text_field :dog_bleed,class:"field", id:"dog_bleed", placeholder:"例）雑種（40文字まで）", maxlength:"40" %>
         <div class="bold-text">
           ワンちゃんの年齢
           <span class="important-mark">必須</span>
         </div>
-         約<%= f.number_field :dog_age, class:"dog_age", id:"dog_age"%>歳
+         約<%= f.number_field :dog_age, class:"field", id:"dog_age"%>歳
       </div>  
     </div>
      <%#犬の情報%>
       <%#仕事の情報%>
       <div class="dog-detail">
-      <div class="bold-text">散歩の詳細情報</div>
+      <h3 class="bold-text">散歩の詳細情報</h3>
       <div class="sampo-exp">
         <div class="bold-text">
           どのくらいの時間散歩をして欲しいか
           <span class="important-mark">必須</span>
         </div>
-        <%= f.collection_select(:working_hour_id, WorkingHour.all, :id, :name, {}, {class:"select-box", id:"working_hour"}) %>
+        <%= f.collection_select(:working_hour_id, WorkingHour.all, :id, :name, {}, {class:"field", id:"working_hour"}) %>
         <div class="bold-text">
           希望日時
           <span class="important-mark">必須</span>
         </div>
-         <%= f.date_field :working_date, class:"working_date", id:"working_date" %>
+         <%= f.date_field :working_date, class:"field", id:"working_date"  %>
          <div class="bold-text">
           お散歩希望時間帯
           <span class="important-mark">必須</span>
         </div>
-        <%= f.collection_select(:working_time_id, WorkingTime.all, :id, :name, {}, {class:"select-box", id:"working_time"}) %>
-        <div class="bold-text">
-          お住まいの都道府県
-        </div>
-          <%= current_user.address.prefecture %>
-        <div class="bold-text">
-          お住まいの市町村
-        </div>
-         <%= current_user.address.city %>
+        <%= f.collection_select(:working_time_id, WorkingTime.all, :id, :name, {}, {class:"field", id:"working_time"}) %>
       </div>  
     </div>
      <%#仕事の情報%>
      <%# 下部ボタン %>
-    <div class="sell-btn-contents">
+    <div class="btn-contents">
       <%= f.submit "散歩依頼を投稿する" ,class:"sampo-btn" %>
     </div>
     <%# /下部ボタン %>
    </div>
-  </div>
   <%end%>
+  </div>
 
- <footer> <%= image_tag "logomini.png", class: "logo-img" %>
- </footer>
+ 
 </div>

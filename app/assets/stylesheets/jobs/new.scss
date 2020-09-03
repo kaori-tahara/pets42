@@ -1,0 +1,52 @@
+.job-new-main{
+  height:100%;
+  width: 100vw;
+  background-image: image-url('new_job.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 5vh 15vw 5vh 35vw;
+  background-attachment: fixed;
+}
+
+.new-head{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.job-back-btn{
+  display: inline-block;
+  margin-right: 60px;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #fd9535;
+  border: solid 2px #fd9535;
+  border-radius: 3px;
+  transition: .4s;
+  width: auto;
+}
+
+.job-back-btn:hover {
+  background: #fd9535;
+  color: white;
+}
+
+.important-mark{
+  color: antiquewhite;
+  background-color: crimson;
+  border-radius: 10%;
+  padding: 3px;
+  margin: 3px;
+}
+
+.field{
+  margin-bottom: 4vh;
+}
+
+textarea {
+  width: 80%; 
+  border-radius: 5px; 
+  resize: none; 
+}
+

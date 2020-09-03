@@ -7,7 +7,7 @@
           <% if @job.dog_picture.present?%>
           <%= image_tag @job.dog_picture, class: "job-img"%>
           <%else %>
-           <%= image_tag "demologo.png", class:"demo-pic"%>
+           <%= image_tag "demo.png", class:"demo-pic"%>
           <%end %>
          </div>
          <div class = "show-titles">
@@ -49,13 +49,6 @@
          市町村<%= @job.user.address.city%>
          </div>
         </div>
-        <div class ="show-text">
-         <div>
-         <%= @job.user.nickname%>さんからのメッセージ
-         </div>
-         <div>
-         <%= @job.text%>
-         </div>
         </div>
       </div>
    </div>

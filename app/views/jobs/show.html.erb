@@ -21,21 +21,21 @@
         </div>
       </div>
 
-      <div class ="main-middle">
+      <div class ="job-main-middle">
         <div class = "show-ex">
-         <h2 class = "sanpo-show">依頼詳細</h2>
+         <h2 class = "job-sanpo-show">依頼詳細</h2>
         <table>
          <tr>
           <th>タイトル</th><td class ="w"><%= @job.title %></td>
           </tr> 
           <tr>
-          <th>ワンちゃんの名前</th><td class = "w"><%= @job.dog_name %></td>
+          <th>犬の名前</th><td class = "w"><%= @job.dog_name %></td>
           </tr>
           <tr>
            <th>犬種</th><td class = "w"><%= @job.dog_bleed %></td>
            </tr>
            <tr>
-           <th>ワンちゃんの年齢</th><td class = "w">約<%= @job.dog_age %>歳</td>
+           <th>犬の年齢</th><td class = "w">約<%= @job.dog_age %>歳</td>
            </tr>
          <tr>
          <th>希望散歩時間</th><td class ="w"><%= @job.working_hour.name %></td>
@@ -64,9 +64,9 @@
 <div class = "cr">
  <div class = "cr-offer-btn">
     <% if user_signed_in? && current_user.id == @job.user_id %>
-    <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "cr-edit" %>
-    <%= link_to '削除', job_path(@job.id) , method: :delete, class:'cr-destroy' %>
-    <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
+     <%= link_to '削除', job_path(@job.id) , method: :delete, class:'cr-destroy' %>
+     <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "cr-edit" %>
+     <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
     <%else%>
          <% if @job.job_history == nil  %> 
             <%= link_to '申し込む',  job_jobnegotiations_path(@job.id), method: :get,class:"cr-nego-btn"%> 

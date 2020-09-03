@@ -2,7 +2,7 @@
 <div class ="show-main">
       <div class = "show-main-up">
        <h2 class ="show-top">お散歩提供情報</h2>
-       <div class = "show-contents">
+       <div class = "contents">
          <div class ="show-pic">
            <div class = "show-nickname">
             <%= link_to @craving.user.nickname ,mypage_path(@craving.user.id),class:"show-my"%>さんのお散歩可能情報です
@@ -21,29 +21,29 @@
         </div>
       </div>
 
-      <div class ="show-main-middle">
+      <div class ="job-main-middle">
         <div class = "show-ex">
-            <h2 class = "sanpo-show">散歩の詳細情報</h2>
+            <h2 class = "job-sanpo-show">散歩の詳細情報</h2>
             <table>
-           <tr class ="">
+           <tr >
            <th>タイトル</th><td class ="w"><%= @craving.title %></td>
            </tr>
-           <tr class="">
-           <th>犬の飼育経験</th><td class ="w"><%= @craving.experience.name %></td>
+           <tr >
+           <th>飼育経験</th><td class ="w"><%= @craving.experience.name %></td>
            </tr>
-           <tr class ="w-date">
+           <tr >
            <th>希望日時</th><td class ="w"><%=@craving.working_date%></td>
            </tr>
-           <tr class ="w-hour">
+           <tr >
            <th>お散歩可能時間</th><td class ="w"><%=@craving.working_hour.name%></td>
            </tr>
-           <tr class ="w-time">
+           <tr >
            <th>お散歩可能時間帯</th><td class ="w"><%=@craving.working_time.name%></td>
            </tr>
-           <tr class ="w-pref"> 
+           <tr > 
            <th>都道府県</th><td class ="w"><%= @craving.user.address.prefecture %></td>
            </tr>
-           <tr class="city">
+           <tr >
            <th>市町村</th><td class ="w"><%= @craving.user.address.city%></td>
            </tr>
            <tr class ="show-text">

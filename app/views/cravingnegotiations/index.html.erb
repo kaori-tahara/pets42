@@ -40,11 +40,6 @@
          市町村<%= @craving.user.address.city%>
          </div>
         </div>
-         <div class ="show-text">
-           <div><%= @craving.user.nickname%>さんからのメッセージ</div>
-         </div>
-         <div>
-         <%= @craving.text%>
          </div>
          </div>
         </div>
@@ -61,7 +56,6 @@
          <div>
          <%= f.submit "お散歩を頼む！" ,class:"craving-red-btn" %>
          </div>
-        <p class='or'>もしくは</p>
          <div>
          <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
          </div>

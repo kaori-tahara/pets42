@@ -9,7 +9,10 @@
   position: relative;
   background-attachment: fixed;
   display: flex;
-  justify-content: space-around;
+}
+
+.job-main-middle{
+ margin-left: 5vw;
 }
 
 .show-craving-pic{
@@ -48,8 +51,8 @@
   overflow-x : auto
 }
 
-.sanpo-show{
-  padding-left: 40px;
+.job-sanpo-show{
+  padding-left: 10vw;
   margin-bottom: 8vh;
 }
 
