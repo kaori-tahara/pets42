@@ -35,6 +35,9 @@ class CravingsController < ApplicationController
     end
   end
 
+  def show 
+  end
+
   private
 
   def craving_params
@@ -44,4 +47,10 @@ class CravingsController < ApplicationController
   def set_craving
     @craving = Craving.find(params[:id])
   end
+  
+  def craving_history_params
+    params.permit(@craving.id).merge(user_id: current_user.id)
+  end
+
+
 end

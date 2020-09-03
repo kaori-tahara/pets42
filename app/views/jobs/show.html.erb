@@ -1,88 +1,79 @@
 <%= render "shared/header" %>
- <div class ="main">
-      <div class = "main-up">
+ <div class ="job-show-main">
+      <div class = "show-main-up">
        <h2 class ="show-top">お散歩依頼情報</h2>
        <div class = "contents">
-         <div class ="show-pic">
-         <%# 交渉ずみならばフラッグをつける表示 %>
-            <% if @job.job_history.present?%> 
-            <%= image_tag "flag.png"%>
-            <%end%>
-          <%# //交渉ずみならば表示 %>
-          <% if @job.dog_picture.present?%>
-          <%= image_tag @job.dog_picture, class: "job-img" %>
-          <% else %>
-          <%= image_tag "demologo.png", class:"demo-pic"%>
-          <%end%>
-         </div>
-         <div class = "show-titles">
-           <div>
-           <%= link_to @job.user.nickname , mypage_path(@job.user.id)%>さんのお散歩依頼です
-           </div>
-           <div>
-           タイトル<%= @job.title %>
-           </div>
-           <div>
-           ワンちゃんの名前<%= @job.dog_name %>
-           </div>
-           <div>
-           犬種<%= @job.dog_bleed %>
-           </div>
-           <div>
-           ワンちゃんの年齢 約<%= @job.dog_age %>歳
-           </div>
-         </div>
+          <div class ="show-pic">
+            <div class = "show-nickname">
+            <%= link_to @job.user.nickname , mypage_path(@job.user.id),class:"job-mypage"%>さんのお散歩依頼です
+            </div>
+           <%# 交渉ずみならばフラッグをつける表示 %>
+             <% if @job.job_history.present?%> 
+             <%= image_tag "flag.png",class:"show-flag"%>
+             <%end%>
+            <%# //交渉ずみならば表示 %>
+           <% if @job.dog_picture.present?%>
+           <%= image_tag @job.dog_picture, class: "show-craving-pic" %>
+           <% else %>
+           <%= image_tag "demo.png", class:"show-craving-pic"%>
+           <%end%>
+          </div>
         </div>
       </div>
 
       <div class ="main-middle">
         <div class = "show-ex">
-         <h2>依頼詳細</h2>
-         <div>
-         希望散歩時間<%= @job.working_hour.name %>
-         </div>
-         <div>
-         希望日時<%= @job.working_date%>
-         </div>
-         <div>
-         希望時間帯<%=@job.working_time.name%>
-         </div>
-         <div>
-         都道府県<%= @job.user.address.prefecture %>
-         </div>
-         <div>
-         市町村<%= @job.user.address.city%>
-         </div>
-        </div>
-        <div class ="show-text">
-         <div>
-         <%= @job.user.nickname%>さんからのメッセージ
-         </div>
-         <div>
-         <%= @job.text%>
-         </div>
+         <h2 class = "sanpo-show">依頼詳細</h2>
+        <table>
+         <tr>
+          <th>タイトル</th><td class ="w"><%= @job.title %></td>
+          </tr> 
+          <tr>
+          <th>ワンちゃんの名前</th><td class = "w"><%= @job.dog_name %></td>
+          </tr>
+          <tr>
+           <th>犬種</th><td class = "w"><%= @job.dog_bleed %></td>
+           </tr>
+           <tr>
+           <th>ワンちゃんの年齢</th><td class = "w">約<%= @job.dog_age %>歳</td>
+           </tr>
+         <tr>
+         <th>希望散歩時間</th><td class ="w"><%= @job.working_hour.name %></td>
+         </tr>
+         <tr>
+         <th>希望日時</th><td class ="w"><%= @job.working_date%></td>
+         </tr>
+         <tr>
+         <th>希望時間帯</th><td class ="w"><%=@job.working_time.name%></td>
+         </tr>
+         <tr>
+         <th>都道府県</th><td class ="w"><%= @job.user.address.prefecture %></td>
+         </tr>
+         <tr>
+         <th>市町村</th><td class ="w"><%= @job.user.address.city%></td>
+         </tr>
+         <tr class ="show-text">
+          <th><%= @job.user.nickname%>さんからのメッセージ</th>
+          <td class ="w"><%= @job.text%></td>
+          </tr>
+        </table>
         </div>
       </div>
    </div>
 
+<div class = "cr">
+ <div class = "cr-offer-btn">
     <% if user_signed_in? && current_user.id == @job.user_id %>
-    <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "job-edit" %>
-    <p class='matawa'>または</p>
-    <%= link_to '削除', job_path(@job.id) , method: :delete, class:'job-destroy' %>
-    <p class='or'>もしくは</p>
-    <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+    <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "cr-edit" %>
+    <%= link_to '削除', job_path(@job.id) , method: :delete, class:'cr-destroy' %>
+    <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
     <%else%>
          <% if @job.job_history == nil  %> 
-            <%= link_to '申し込む',  job_jobnegotiations_path(@job.id), method: :get,class:"job-nego-btn"%> 
-            <p class ="">または</p>
-            <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+            <%= link_to '申し込む',  job_jobnegotiations_path(@job.id), method: :get,class:"cr-nego-btn"%> 
+            <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
             <%else%>
-            <%= link_to '一覧へ戻る', jobs_path , class:'jobs-return-btn' %>
+            <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
           <%end %>
     <% end %> 
-
-    <div class = "main-bottom">
-    <%= image_tag "backimage2.jpg", class: "foot-img" %>
-    </div>
- </div>
-<%= render "shared/footer" %>
+  </div>
+</div>

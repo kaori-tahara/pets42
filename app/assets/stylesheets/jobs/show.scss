@@ -1,0 +1,97 @@
+.job-show-main{
+  height:100%;
+  width: 100vw;
+  background-image: image-url('yellow.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 5vh 15vw;
+  position: relative;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-craving-pic{
+  border-radius:20%;
+  max-width: 100%;
+  height: 50vh;
+  width: 33vw;
+}
+
+.show-main-up{
+  position: relative;
+}
+
+.show-flag{
+  position: absolute;
+  top: 200px;
+  left: 35px;
+  height: 20%;
+  width: 20vw;
+}
+
+.show-top{
+  padding-left: 20px;
+}
+.show-nickname{
+  padding-left: 20px;
+}
+
+.job-mypage{
+ font-weight: bold;
+ color: rgb(40, 157, 224);
+ font-size: larger;
+}
+
+.show-ex{
+  overflow-x : auto
+}
+
+.sanpo-show{
+  padding-left: 40px;
+  margin-bottom: 8vh;
+}
+
+.w{
+  border-bottom-style: dotted;
+  border-bottom-color: rgb(198, 214, 192);
+}
+
+.cr{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.cr-edit{
+ border-style: dotted;
+ border-width: medium;
+ border-color: rgb(157, 233, 122);
+ padding: 2px;
+ margin-right: 5vw;
+}
+
+.cr-destroy{
+ border-style: dotted;
+ border-width: medium;
+ border-color: rgb(243, 90, 90);
+ padding: 2px;
+ margin-right: 5vw;
+}
+
+.cravings-return-btn{
+  border-style: dotted;
+  border-width: medium;
+  border-color: rgb(90, 151, 243);
+  padding: 2px;
+}
+
+.cr-nego-btn{
+border-style: dotted;
+ border-width: medium;
+ border-color: rgb(243, 177, 90);
+ padding: 2px;
+ margin-right: 5vw;
+}
