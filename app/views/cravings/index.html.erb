@@ -2,34 +2,29 @@
 
 <div class = "craving-main">
   <div class = "craving-contents">
-    <h2 class = "craving-title">散歩提供一覧</h2>
    <div class = "craving-contener">
     <ul class='cravings-lists'>
       <% @cravings.each do |craving| %> 
       <li class='craving-list'> 
        <%= link_to "/cravings/#{craving.id}" do %>
-        <div class='craving-img'>
-          <div>
+        <div class='craving-pic'>
            <%# 交渉ずみならばフラッグをつける表示 %>
             <% if craving.craving_history.present?%> 
-            <%= image_tag "flag.png"%>
+            <%= image_tag "flag.png", class:"flag"%>
             <%end%>
-          </div>
             <%# //交渉ずみならば表示 %>
-            <div>
           <% if craving.craving_picture.present?%>
           <%= image_tag craving.craving_picture, class: "craving-pic" %>
           <% else %>
-          <%= image_tag "craving.png", class:"craving-demo-pic"%>
+          <%= image_tag "demo.png", class:"craving-pic"%>
           <%end%>
-          </div>
         </div>
           <div class='cr-info'>
-            <h2 class='cr-title'>
-            タイトル：<%= craving.title %>
-            </h2>
             <div class='cr-name'>
-             <%= craving.user.nickname %>さんはお散歩に行けます
+             <%= craving.user.nickname %>さんの投稿
+            </div>
+            <div class='cr-title'>
+            タイトル：<%= craving.title %>
             </div>
             <div class ="cr-date">
              日にち：<%= craving.working_date %>
@@ -39,10 +34,9 @@
             </div>
             <div class ="cr-prefecture">
              地域：<%= craving.user.address.prefecture %>
-           </div>
-          </div>
-       </div> 
-      <% end %>
+            </div>
+          </div> 
+        <% end %>
       </li>
       <% end %>
       <%# 投稿がない場合のダミー %>
@@ -50,9 +44,9 @@
        <li class='craving-list'>
          <%= image_tag "craving.png", class: "job-img" %>
          <div class='cr-info'>
-           <h2 class='cr-title'>
+           <h3 class='cr-title'>
             提供依頼ボタンから投稿！
-           </h2>
+           </h3>
             <div class='cr-name'>
              例）犬吉さんはお散歩にいけます
             </div>
@@ -72,10 +66,7 @@
 
 </div>
 <footer>
-  <div > 
-    <%= image_tag "logomini.png", class: "job-foot-img" %>
-  </div>
-  <div>
-    <%= link_to "お散歩依頼一覧へ",jobs_path,class:"j-craving-btn" %>
+  <div class = "j-craving-btn"> 
+    <%= link_to "お散歩依頼一覧へ",jobs_path,class:"" %>
   </div>
 </footer>

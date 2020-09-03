@@ -2,28 +2,28 @@
 
 <div class = "main">
   <div class = "job-contents">
-    <h2 class = "title">散歩依頼一覧</h2>
    <div class = "job-contener">
     <ul class='jobs-lists'>
       <% @jobs.each do |job| %> 
       <li class='job-list'>
+       <%#link_to do〜endで要素を同時にリンクにした%>
        <%= link_to "/jobs/#{job.id}" do %>
-        <div class='job-img'>
-          <% if job.dog_picture.present?%>
-          <%= image_tag job.dog_picture, class: "job-img" %>
-          <% else %>
-          <%= image_tag "demologo.png", class:"demo-pic"%>
-          <%end%>
-        </div>
-        <div class='job-info'>
-          <%# 交渉ずみならばフラッグをつける表示 %>
-          <% if job.job_history.present?%> 
-          <%= image_tag "flag.png"%>
-          <%end%>
-          <%# //交渉ずみならば表示 %>
-           <h2 class='job-title'>
+         <div class='job-img'>
+           <%# 交渉ずみならばフラッグをつける表示 %>
+            <% if job.job_history.present?%> 
+            <%= image_tag "flag.png" , class:"flag"%>
+            <%end%>
+           <%# //交渉ずみならば表示 %>
+           <% if job.dog_picture.present?%>
+           <%= image_tag job.dog_picture, class: "job-img" %>
+           <% else %>
+           <%= image_tag "demo.png", class:"job-img"%>
+           <%end%>
+         </div>
+         <div class='job-info'>
+           <div class='job-title'>
             タイトル：<%= job.title %>
-           </h2>
+           </div>
            <div class='dog-name'>
              名前：<%= job.dog_name %>
            </div>
@@ -33,11 +33,11 @@
            <div class ="dog-prefecture">
              地域：<%= job.user.address.prefecture %>
            </div>
-        </div>
-       </div> 
+         </div>
        <% end %>
+       <%#link_to do〜endで要素を同時にリンクにした%>
       </li>
-      <% end %>
+     <% end %>
       <%# 投稿がない場合のダミー %>
       <% if @jobs.length == 0 %>
        <li class='job-list'>
@@ -65,9 +65,6 @@
 
 </div>
 <footer>
-  <div > 
-    <%= image_tag "logomini.png", class: "job-foot-img" %>
-  </div>
   <div>
     <%= link_to "お散歩提供一覧へ",cravings_path,class:"job-craving-btn" %>
   </div>

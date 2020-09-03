@@ -1,7 +1,7 @@
-.job-contents{
+.craving-contents{
   height:100%;
   width: 100vw;
-  background-image: image-url('backimage.jpg');
+  background-image: image-url('dog_run.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -11,7 +11,7 @@
 }
 
 
-.job-contents::before {
+.craving-contents::before {
   background: inherit;
   content: '';
   filter: blur(5px);
@@ -22,7 +22,7 @@
   left: -5px;
 }
 
-.jobs-lists{
+.cravings-lists{
   display: flex;
   list-style: none;
   flex-wrap: wrap;
@@ -37,18 +37,19 @@ a{
   color: black;
 }
 
-.job-img{
+.craving-pic{
   max-width: 100%;
   width: 33vw;
   height: 33vh;
   border-top-right-radius: 10%;
   border-top-left-radius: 10%;
+
 }
-.job-list{
+.craving-list{
   position: relative;
   width: 15vw;
   margin-right: 1vw;
-  
+  margin-bottom: 2vh;
 }
 
 .flag{
@@ -57,22 +58,16 @@ a{
   left: 10px;
 }
 
-.job-info{
-  background-color: rgb(228, 222, 185);
+.cr-info{
+  background-color: rgb(220, 255, 197);
   border-bottom-right-radius: 10%;
   border-bottom-left-radius: 9%;
   padding : 1vw;
 }
 
 
-.job-craving-btn{
+.j-craving-btn{
+  padding-left:45% ;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
-
-
-
- 
-
-

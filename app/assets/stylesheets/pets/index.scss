@@ -1,6 +1,6 @@
-// .main {
-//   background: #f8f8f8;
-// }
+* {
+  box-sizing: border-box;
+}
 
 
 .text-job {
@@ -12,59 +12,20 @@
   background-position: top center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-
-
-.how{
-  padding-left: 40px;
-}
-
-.how-to-lists{
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-}
-
-.register-link{
-  text-decoration: none;
-  font-weight: bold;
-  color: chocolate;
-}
-
-.regi-ex{
-  padding-left: 40px;
-}
-
-.posting{
-  padding-left: 40px;
-}
-
-.waiting{
-  padding-left: 40px;
-}
-
-.ex-head{
-  padding-left: 40px;
-}
-
-
-
-// 依頼のボタン以下
-
 .main-contents{
   display: flex;
   flex-direction: column;
   color: black;
   text-shadow:  0 0 3px rgba(207, 206, 206, 0.9);
-  margin-left: 20%;
+  
 }
-
 
 .jobs-explain{
   display: flex;
@@ -76,19 +37,59 @@
   justify-content: space-around;
 }
 
-.job-btn{
-  display: inline-block;
-  justify-content: space-around;
+// 中央の利用方法
+.how{
+  padding-left: 40px;
 }
 
+.how-to-lists{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  
+
+}
+
+.register-link{
+  text-decoration: none;
+  font-weight: bold;
+  color: chocolate;
+}
+
+.regi-ex{
+  padding-left: 40px;
+}
+.pets-regi-pic{
+  height:30vh ;
+  max-width: 100%;
+
+}
+
+.posting{
+  padding-left: 40px;
+}
+
+.pets-post-pic{
+  height:30vh ;
+  max-width: 100%;
+}
+
+.waiting{
+  padding-left: 40px;
+}
+
+.pets-wait-pic{
+  height:30vh ;
+  max-width: 100%;
+}
+
+
+// 依頼、提供ボタン
 .job-craving-btn{
   display: flex;
   justify-content: space-around;
   list-style: none;
 }
-
-
-
 
 .btn-job-stitch {
   display: inline-block;
@@ -131,8 +132,10 @@
   background: #41bd07;
   box-shadow: 0px 0px 0px 5px #299237;
 }
+// 依頼・提供ボタン
 
-.footer{
+
+.pets-footer{
   display: flex;
   justify-content: center;
 }
