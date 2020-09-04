@@ -1,0 +1,35 @@
+.nego-main{
+  padding: 5vh 10vw;
+}
+
+
+
+.nego{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.nego-table{
+  margin-bottom: 20vh;
+}
+
+.offer-get{
+  display: flex;
+  flex-direction: column;
+}
+
+.nego-btn{
+  padding: 10vh 30vw;
+}
+
+.offer-btn{
+  width: 25vw;
+  height: 8vh;
+  border: solid 2px;
+  border-radius: 15px;
+  border-color: rgb(231, 137, 137);
+  background-color: rgb(255, 61, 61);
+  color: white;
+  font-weight: bold;
+}

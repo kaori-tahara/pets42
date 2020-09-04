@@ -1,0 +1,50 @@
+.my-show-main{
+  height:100%;
+  width: 100vw;
+  background-image: image-url('bokashi.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+ 
+}
+
+.my-nick{
+  padding-left: 20vw;
+}
+
+.mypage-show-pic{
+  height: 40vh;
+  width: 30vw;
+  border-radius: 25px;
+}
+
+.mypage-show-con{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5vh 13vw;
+}
+
+.history-past{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.history_list{
+  list-style: none;
+}
+
+.history_list{
+  list-style: none;
+}
+
+.my-his{
+  border-bottom: dotted;
+  border-color: cadetblue;
+
+}
+
+.my-link-btn{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+}

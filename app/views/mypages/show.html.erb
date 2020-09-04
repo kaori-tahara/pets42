@@ -1,64 +1,54 @@
-<header>
-</header> 
-  <div class = "main">
-     <h2><%= @mypage.user.nickname%>さんのマイページ</h2>
-    <div class ="up-content">
-         <div class="click-upload">
-            <div class="mypage-pic">
-             <%if @mypage.mypage_picture.present? %>
-             <%= image_tag @mypage.mypage_picture %>
-             <%else%>
-             <%= image_tag "logomini.png"%>
-             <%end%>
-            </div>
+<div class = "my-show-main">
+   <h2 class = "my-nick"><%= @mypage.user.nickname%>さんのページ</h2>
+    <div class ="mypage-show-con">
+         <div class="my-texts">
+             <div class="show-mypage-pic">
+               <%if @mypage.mypage_picture.present? %>
+               <%= image_tag @mypage.mypage_picture , class:"mypage-show-pic"%>
+               <%else%>
+               <%= image_tag "logomini.png" , class:"mypage-show-pic"%>
+               <%end%>
+             </div>
+             <div class = "my-love"><%= @mypage.dog_love.name %></div>
          </div>
-          <div>
-           <div>犬愛をアピール</div>
-           <%= @mypage.dog_love.name %>
-          </div>
-        <div>
-          <div>自己紹介</div>
-          <div>
-          <%= @mypage.text%>
-          </div>
-        </div>
+         <table class = "self-text">
+           <th>自己紹介</th>
+           <tr>
+             <td class = "w"><%= @mypage.text%></td>
+           </tr>
+         </table>
      </div>
 
-    <div class ="history-past">
-      <div class = "craving_history_past">
-        <div>過去のお散歩実績</div>
-       <ul class ="history_list">
+      <div class ="history-past">
+         <div class = "craving_history_past">
+            <ul class ="history_list">
+             <li>過去のお散歩実績</li>
                 <% @craving_histories.each do |craving_history| %> 
                     <%if @mypage.user_id == craving_history.user_id  %>
-                 <div><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み
-                 </div>
+                 <li class = "my-his"><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み</li>
+                 <%# <li><%=  User.find_by(id:craving_id.user_id)%>
                 <%end%>
-             <%end%>
-       </ul>
+               <%end%>
+            </ul>
+          </div>
+         <div class = "job_history_past">
+            <ul class ="history_list">
+            <li>過去の依頼実績</li>
+              <% @job_histories.each do |job_history| %>  
+              <%if @mypage.user_id == job_history.user_id %>  
+              <li class = "my-his"><%=job_history.created_at.strftime('%Y/%m/%d')%>済み</li>
+              <%end%>  
+              <%end%>
+            </ul>
+        </div>
       </div>
-      <div class = "job_history_past">
-        <div>過去の依頼実績</div>
-       <ul class ="history_list">
-           <% @job_histories.each do |job_history| %>  
-             <%if @mypage.user_id == job_history.user_id %>  
-            <div><%=job_history.created_at.strftime('%Y/%m/%d')%>済み
-            </div>
-            <%end%>  
-          <%end%>
-       </ul>
-      </div>
-    </div>
+</div>
 
+  <div class ="my-link-btn">
      <% if user_signed_in? && current_user.id == @mypage.user_id %>
-     <div class ="link-btn">
-     <%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"mypage-edit-btn"%>
-     <div class="mataha">または</div>
-     <%= link_to '戻る', root_path , class:'top-return-btn' %>
+     <%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%>
+     <%= link_to '戻る', root_path , class:'cravings-return-btn' %>
      <%else%>
-     <%= link_to '戻る', root_path , class:'top-return-btn' %>
+     <%= link_to '戻る', root_path , class:'cravings-return-btn' %>
      <%end%>
-     </div>
-     
- </div>
-<footer>
-</footer>
+  </div>

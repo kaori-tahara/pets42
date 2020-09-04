@@ -1,74 +1,63 @@
- <div class ="main">
+<header class ="new-head">
+  <div class = "left-link">
+  <%= link_to image_tag("logo.png", class: "pets-icon"), "/" %>
+  </div>
+  <div class ="right-link">
+  <%= link_to '提供一覧へ戻る', "/cravings", class: "cr-new-backbtn" %>
+  </div>
+</header>
+
+<div class ="nego-main">
+  <div class ="nego">
       <div class = "main-up">
        <h2 class ="show-top">お散歩提供情報の確認</h2>
-       <div class = "contents">
-         <div class ="show-pic">
-          <% if @craving.craving_picture.present?%>
-          <%= image_tag @craving.craving_picture, class: "craving-pic" %>
-          <% else %>
-          <%= image_tag "demo.png", class:"demo-pic"%>
-          <%end%>
-         </div>
-         <div class = "show-titles">
-           <%= @craving.user.nickname%>さんのお散歩可能情報です
-           <div>
-           タイトル<%= @craving.title %>
-           </div>
-         </div>
+        <div class = "contents">
+          <div class ="show-pic">
+           <% if @craving.craving_picture.present?%>
+           <%= image_tag @craving.craving_picture, class: "show-craving-pic" %>
+           <% else %>
+           <%= image_tag "demo.png", class:"show-craving-pic"%>
+           <%end%>
+          <h3>
+           <%= link_to @craving.user.nickname ,mypage_path(@craving.user.id),class:"show-my"%>さんのお散歩可能情報です
+          </h3>
+          </div>
         </div>
       </div>
 
       <div class ="main-middle">
-        <div class = "show-ex">
-         <h2>散歩の詳細情報</h2>
-         <div class="w-expe">
-         犬の飼育経験<%= @craving.experience.name %>
-         </div>
-         <div class ="w-date">
-         希望日時<%=@craving.working_date%>
-         </div>
-         <div class ="w-hour">
-         お散歩可能時間<%=@craving.working_hour.name%>
-         </div>
-         <div class ="w-time">
-         お散歩可能時間帯<%=@craving.working_time.name%>
-         </div>
-         <div class ="w-pref"> 
-         都道府県<%= @craving.user.address.prefecture%>
-         </div>
-         <div class="w-city">
-         市町村<%= @craving.user.address.city%>
-         </div>
-        </div>
-         </div>
-         </div>
-        </div>
+        <table class = "nego-table">
+          <caption>散歩の詳細情報</caption>
+          <tr>
+           <th>犬の飼育経験</th><td class ="w"><%= @craving.experience.name %></td>
+          </tr>
+          <tr>
+           <th>希望日時</th><td class ="w"><%=@craving.working_date%></td>
+          </tr>
+          <tr>
+           <th>お散歩可能時間</th><td class ="w"><%=@craving.working_hour.name%></td>
+          </tr>
+          <tr>
+           <th>お散歩可能時間帯</th><td class ="w"><%=@craving.working_time.name%></td>
+          </tr>
+          <tr> 
+           <th>都道府県</th><td class ="w"><%= @craving.user.address.prefecture%></td>
+          </tr>
+          <tr>
+           <th>市町村</th><td class ="w"><%= @craving.user.address.city%></td>
+          </tr>
+        </table>
       </div>
    </div>
 
 
-     <%= form_with  id: 'craving-offer-form', class: 'craving-offer-form',local: true do |f| %>
-      <%if @craving.craving_history == nil %>
-    <div class ="attention">
-         <div class = "offer-btn">
-          この方にお散歩を頼んでよろしいですか？
-         </div>
-         <div>
-         <%= f.submit "お散歩を頼む！" ,class:"craving-red-btn" %>
-         </div>
-         <div>
-         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
-         </div>
-         <%else%>
-         <div>
-         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
-         </div>
-         <%end%>
-    </div>
-      <% end %>
 
-   
+    <%= form_with  id: 'offer-get', class: 'offer-get',local: true do |f| %>
+      <div class ="nego-btn">
+         <div>
+         <%= f.submit "この方にお散歩を頼む！" ,class:"offer-btn" %>
+         </div>
+      </div>
+    <% end %>
+
 </div>
-
- <footer class = "main-bottom">
- </footer>

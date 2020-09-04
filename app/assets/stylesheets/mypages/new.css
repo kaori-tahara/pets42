@@ -1,0 +1,14 @@
+.my-main{
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 25vw;
+}
+
+.my-text{
+  margin-bottom: 4vh;
+}
+
+.foot{
+  display: flex;
+  justify-content: center;
+}
