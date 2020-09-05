@@ -1,23 +1,22 @@
 .job-show-main{
   height:100%;
   width: 100vw;
-  background-image: image-url('yellow.png');
+  background-image: image-url('072.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 5vh 15vw;
-  position: relative;
+  padding: 5vh 10vw;
   background-attachment: fixed;
   display: flex;
 }
 
-.job-main-middle{
- margin-left: 5vw;
+
+table {
+	table-layout: fixed;
 }
 
 .show-craving-pic{
   border-radius:20%;
-  max-width: 100%;
   height: 50vh;
   width: 33vw;
 }
@@ -34,6 +33,8 @@
   width: 20vw;
 }
 
+
+
 .show-top{
   padding-left: 20px;
 }
@@ -47,12 +48,8 @@
  font-size: larger;
 }
 
-.show-ex{
-  overflow-x : auto
-}
 
 .job-sanpo-show{
-  padding-left: 10vw;
   margin-bottom: 8vh;
 }
 

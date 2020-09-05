@@ -1,11 +1,27 @@
+.my-show-head{
+  margin-top: 5vh;
+}
+
+.my-job-btn{
+  margin-left: 15vw;
+}
+
+.my-root-btn{
+  margin-left: 15vw;
+}
+
+.my-cr-btn{
+  margin-left: 15vw;
+}
+
 .my-show-main{
   height:100%;
   width: 100vw;
-  background-image: image-url('bokashi.png');
+  background-image: image-url('yellow.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
- 
+  background-attachment: fixed;
 }
 
 .my-nick{
@@ -24,6 +40,10 @@
   padding: 5vh 13vw;
 }
 
+.self-text{
+  margin-left: 5vw;
+}
+
 .history-past{
   display: flex;
   justify-content: space-evenly;
@@ -37,14 +57,13 @@
   list-style: none;
 }
 
-.my-his{
-  border-bottom: dotted;
-  border-color: cadetblue;
-
-}
 
 .my-link-btn{
   display: flex;
   justify-content: space-evenly;
   margin-top: 5vh;
+}
+
+table {
+	table-layout: fixed;
 }

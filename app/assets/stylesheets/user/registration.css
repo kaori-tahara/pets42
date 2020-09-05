@@ -1,0 +1,16 @@
+.form-wrap{
+  padding: 5vh 25vw;
+}
+
+.form-header-text{
+  background: linear-gradient(transparent 60%, #fbd 30%);
+}
+
+.input-birth-wrap{
+  display: flex;
+}
+
+.form-group{
+  margin-bottom: 3vh;
+}
+

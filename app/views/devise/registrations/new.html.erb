@@ -1,4 +1,4 @@
-  <%= form_for(@user, url: user_registration_path) do |f| %>  
+<%= form_for(@user, url: user_registration_path) do |f| %>  
  <%= render "shared/error_messages",model: f.object%> 
 <div class='form-wrap'>
   <div class='form-header'>
@@ -6,28 +6,26 @@
       Pets会員情報入力
     </h1>
   </div>
-
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
       <span class="important-mark">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) Pets太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-reg", id:"nickname", placeholder:"例) Pets太郎", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
       <span class="important-mark">必須</span>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <%= f.email_field :email, class:"input-reg", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">パスワード</label>
       <span class="important-mark">必須</span>
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+    <%= f.password_field :password, class:"input-reg", id:"password", placeholder:"6文字以上の半角英数字" %>
     <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
   </div>
   <div class="form-group">
@@ -35,13 +33,7 @@
       <label class="form-text">パスワード(確認)</label>
       <span class="important-mark">必須</span>
     </div>
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
-  </div>
-  <div class="form-group">
-    <p class='form-info-header'>
-      本人確認
-    </p>
-    
+    <%= f.password_field :password_confirmation, class:"input-reg", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -49,8 +41,8 @@
       <span class="important-mark">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 犬" %>
-      <%= f.text_area :family_name, class:"input-name", id:"family-name", placeholder:"例) 大好き子" %>
+      <%= f.text_area :first_name, class:"input-reg", id:"first-name", placeholder:"例) 犬" %>
+      <%= f.text_area :family_name, class:"input-reg", id:"family-name", placeholder:"例) 大好き子" %>
     </div>
   </div>
   <div class="form-group">
@@ -59,8 +51,8 @@
       <span class="important-mark">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :first_kana, class:"input-name", id:"first-kana", placeholder:"例) イヌ" %>
-      <%= f.text_area :family_kana, class:"input-name", id:"family-kana", placeholder:"例) ダイスキコ" %>
+      <%= f.text_area :first_kana, class:"input-reg", id:"first-kana", placeholder:"例) イヌ" %>
+      <%= f.text_area :family_kana, class:"input-reg", id:"family-kana", placeholder:"例) ダイスキコ" %>
     </div>
   </div>
   <div class="form-group">
@@ -72,7 +64,7 @@
       <%= raw sprintf(
                   f.date_select(
                     :birth,
-                    class:'select-birth',
+                    class:'input-reg',
                     id:"birth-date",
                     use_month_numbers: true,
                     prompt:'--',
@@ -84,7 +76,7 @@
     <p class='info-text'>※ 本人情報は正しく入力してください。</p>
   </div>
   <div class='register-btn'>
-    <%= f.submit "NEXT!" ,class:"next-red-btn" %>
+    <%= f.submit "NEXT!" ,class:"next-f-btn" %>
   </div>
 </div>
 <% end %>

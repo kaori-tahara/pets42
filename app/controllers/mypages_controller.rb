@@ -28,7 +28,7 @@ class MypagesController < ApplicationController
   def update
     @mypage = Mypage.find(params[:id])
     if @mypage.update(mypage_params)
-      redirect_to pets_path
+      redirect_to mypage_path
     else
       render :edit
      end

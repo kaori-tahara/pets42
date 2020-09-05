@@ -1,12 +1,11 @@
 .show-main{
   height:100%;
   width: 100vw;
-  background-image: image-url('splash.png');
+  background-image: image-url('074.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 5vh 15vw;
-  position: relative;
+  padding: 5vh 10vw;
   background-attachment: fixed;
   display: flex;
   
@@ -16,5 +15,9 @@
  font-weight: bold;
  color: darkmagenta;
  font-size: larger;
+}
+
+table {
+	table-layout: fixed;
 }
 

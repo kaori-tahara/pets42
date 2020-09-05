@@ -1,3 +1,8 @@
+  <header class = "my-show-head">
+     <%= link_to 'お散歩依頼一覧へ', jobs_path , class:'my-job-btn' %>
+     <%= link_to 'TOPへ', root_path , class:'my-root-btn' %>
+     <%= link_to 'お散歩提供一覧へ', cravings_path , class:'my-cr-btn' %>
+  </header>
 <div class = "my-show-main">
    <h2 class = "my-nick"><%= @mypage.user.nickname%>さんのページ</h2>
     <div class ="mypage-show-con">
@@ -14,7 +19,7 @@
          <table class = "self-text">
            <th>自己紹介</th>
            <tr>
-             <td class = "w"><%= @mypage.text%></td>
+             <td class = ""><%= @mypage.text%></td>
            </tr>
          </table>
      </div>
@@ -26,7 +31,7 @@
                 <% @craving_histories.each do |craving_history| %> 
                     <%if @mypage.user_id == craving_history.user_id  %>
                  <li class = "my-his"><%=craving_history.created_at.strftime('%Y/%m/%d')%>済み</li>
-                 <%# <li><%=  User.find_by(id:craving_id.user_id)%>
+                 <%# <li><%= User.find_by(:user_id user_id)%> 
                 <%end%>
                <%end%>
             </ul>
@@ -45,10 +50,5 @@
 </div>
 
   <div class ="my-link-btn">
-     <% if user_signed_in? && current_user.id == @mypage.user_id %>
      <%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%>
-     <%= link_to '戻る', root_path , class:'cravings-return-btn' %>
-     <%else%>
-     <%= link_to '戻る', root_path , class:'cravings-return-btn' %>
-     <%end%>
   </div>
