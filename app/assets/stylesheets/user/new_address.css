@@ -1,7 +1,48 @@
 .new-reg-ad{
   padding: 5vh 35vw;
+  background-image:linear-gradient(-45deg, #f9f8f7 25%, #ffffff 25%, #ffffff 50%, #f9f8f7  50%, #f9f8f7 75%, #ffffff 75%, #ffffff);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.titile-newad{
+  padding-left: 2vw;
+}
+
+.ad-group{
+  margin-bottom: 3vh;
+  
+}
+
+.imp-mark{
+  color: antiquewhite;
+  background-color: crimson;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+  
 }
 
 .new-reg-in{
-  margin-bottom: 5vh;
+  width: 60%;
+  height: 4vh;
+
 }
+
+.newad-in{
+  padding-left: 5vw; 
+}
+
+.new-ad-btn{
+  width: 25vw;
+  height: 8vh;
+  border: solid 2px;
+  border-radius: 15px;
+  border-color: rgb(27, 23, 23);
+  background-color: rgb(253, 175, 214);
+  color: rgb(71, 55, 55);
+  font-weight: bold;
+  font-size: large;
+}
+

@@ -1,7 +1,7 @@
   <header class = "my-show-head">
-     <%= link_to 'お散歩依頼一覧へ', jobs_path , class:'my-job-btn' %>
-     <%= link_to 'TOPへ', root_path , class:'my-root-btn' %>
-     <%= link_to 'お散歩提供一覧へ', cravings_path , class:'my-cr-btn' %>
+     <div><%= link_to 'お散歩依頼一覧へ', jobs_path , class:'job-btn' %></div>
+     <div><%= link_to 'TOPへ', root_path , class:'my-root-btn' %></div>
+     <div><%= link_to 'お散歩提供一覧へ', cravings_path , class:'craving-btn' %></div>
   </header>
 <div class = "my-show-main">
    <h2 class = "my-nick"><%= @mypage.user.nickname%>さんのページ</h2>
@@ -48,7 +48,9 @@
         </div>
       </div>
 </div>
-
   <div class ="my-link-btn">
-     <%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%>
+     <% if user_signed_in? && current_user.id == @mypage.user_id %>
+     <div><%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%></div>
+     <%end%>
   </div>
+  

@@ -1,18 +1,10 @@
 .my-show-head{
   margin-top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.my-job-btn{
-  margin-left: 15vw;
-}
-
-.my-root-btn{
-  margin-left: 15vw;
-}
-
-.my-cr-btn{
-  margin-left: 15vw;
-}
 
 .my-show-main{
   height:100%;
@@ -21,7 +13,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
+ 
 }
 
 .my-nick{
@@ -60,7 +52,7 @@
 
 .my-link-btn{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 5vh;
 }
 

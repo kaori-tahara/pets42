@@ -10,7 +10,7 @@
 <div class = "job-new-main">
   <div class = "new-contens">
    <div class = "contens">
-    <h2>依頼の内容を記載してください</h2>
+    <h2 class="title-top">依頼の内容を記載してください</h2>
     <%= form_with model:@job, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
      <%#写真%>
@@ -35,7 +35,7 @@
           アピール文
           <span class="important-mark">必須</span>
         </div>
-        <%= f.text_area :text, class:"field", id:"job-text", placeholder:"例）用事があっていつもの時間にお散歩に連れていけないので、よければどなたかお散歩を頼めませんか？等" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"ap-field", id:"job-text", placeholder:"例）用事があっていつもの時間にお散歩に連れていけないので、よければどなたかお散歩を頼めませんか？等" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
      <%#title,text%>
@@ -57,7 +57,7 @@
           ワンちゃんの年齢
           <span class="important-mark">必須</span>
         </div>
-         約<%= f.number_field :dog_age, class:"field", id:"dog_age"%>歳
+         約<%= f.number_field :dog_age, class:"age-field", id:"dog_age"%>歳
       </div>  
     </div>
      <%#犬の情報%>

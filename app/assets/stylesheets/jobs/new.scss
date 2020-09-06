@@ -40,13 +40,25 @@
   margin: 3px;
 }
 
-.field{
-  margin-bottom: 4vh;
+.title-top{
+  padding-left: 3vw;
 }
 
-textarea {
-  width: 80%; 
-  border-radius: 5px; 
+.field{
+  margin-bottom: 4vh;
+  width: 60%; 
+  height: 4vh;
+  resize: none; 
+ 
+}
+
+.ap-field{
+  width: 60%;
+  height: 8vh;
   resize: none; 
 }
 
+.age-field{
+  width: 20%;
+  height: 4vh;
+}

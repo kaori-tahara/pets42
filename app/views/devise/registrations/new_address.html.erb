@@ -1,26 +1,45 @@
 <div class = "new-reg-ad">
- <h2>詳細情報の記載</h2>
+ <h2 class = "titile-newad">詳細情報の記載</h2>
  <%= form_for @address do |f| %>
  <%= render "shared/error_messages" ,model: f.object%>
-  <div>
-    <div>郵便番号（ハイフン含む）を入力してください</div><span class="important-mark">必須</span>
+ <div class ="ad-group">
+    <div class ="ad-new">
+      <label>郵便番号（ハイフン含む）を入力してください</label>
+      <span class="imp-mark">必須</span>
+    </div>
+    <div class= "newad-in">
     <%=f.text_field :zip ,placeholder:"郵便番号をハイフンを入れて入力", class:"new-reg-in"%>
+    </div>
   </div>
-  <div>
-    <div>都道府県を入力してください</div><span class="important-mark">必須</span>
-    <%= f.text_field :prefecture, placeholder:"都道府県を入力してください", class:"new-reg-in" %>
-  </div>
-   <div>
-      <div>市町村を入力してください</div><span class="important-mark">必須</span>
-     <%= f.text_field :city,placeholder:"市町村を入力してください", class:"new-reg-in"%>
+  <div class ="ad-group">
+     <div class ="ad-new">
+       <label>都道府県を入力してください</label>
+       <span class="imp-mark">必須</span>
      </div>
-   <div>
-       <div>電話番号を入力してください</div><span class="important-mark">必須</span>
+     <div class= "newad-in">
+     <%= f.text_field :prefecture, placeholder:"都道府県を入力してください", class:"new-reg-in" %>
+     </div>
+   </div>
+   <div class ="ad-group">
+      <div class ="ad-new">
+       <label>市町村を入力してください</label>
+       <span class="imp-mark">必須</span>
+      </div>
+      <div class= "newad-in">
+      <%= f.text_field :city,placeholder:"市町村を入力してください", class:"new-reg-in"%>
+      </div>
+    </div>
+    <div class ="ad-group">
+       <div class ="ad-new">
+         <label>電話番号を入力してください</label>
+          <span class="imp-mark">必須</span>
+       </div>
+       <div class= "newad-in">
        <%= f.text_field :phone,placeholder:"電話番号を入力してください", class:"new-reg-in"%>
-  </div>
-
-   <div class="sign-up">
-    <%= f.submit "登録する" %>
+       </div>
+     </div>
+   <div class= "new-ad-regbtn">
+    <%= f.submit "登録する",class:"new-ad-btn"%>
   </div>
  <%end%>
 

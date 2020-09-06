@@ -1,3 +1,26 @@
 .ad-cr{
-  padding-left: 20vw;
+  padding-left: 35vw;
+  padding-top:35vh;
+  background-image:linear-gradient(-45deg, #f9f8f7 25%, #ffffff 25%, #ffffff 50%, #f9f8f7  50%, #f9f8f7 75%, #ffffff 75%, #ffffff);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
+
+.thx-ad-btn{
+  width: 100px;
+  height: 4vh;
+  border: solid 2px;
+  border-radius: 15px;
+  border-color: rgb(27, 23, 23);
+  background-color: rgb(253, 175, 214);
+  color: rgb(71, 55, 55);
+  font-weight: bold;
+  font-size: large;
+  margin-left: 20%;
+}
+
+.crad-next{
+  padding-left: 20%;
+}
+

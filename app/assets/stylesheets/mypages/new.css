@@ -1,14 +1,20 @@
 .my-main{
   display: flex;
   flex-direction: column;
-  padding: 5vh 25vw;
+  padding: 5vh 35vw;
 }
 
-.my-text{
-  margin-bottom: 4vh;
+.intro-field{
+  width: 80%;
+  height: 8vh;
+  resize: none; 
 }
 
 .foot{
   display: flex;
   justify-content: center;
+}
+
+.mypage-pic{
+  margin-bottom: 3vh;
 }

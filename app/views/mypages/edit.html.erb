@@ -9,20 +9,20 @@
            <p>
            ※自分をアピールできる写真を載せてみよう。
            </p>
-           <div class = "my-text">
+           <div >
             <%= f.file_field :mypage_picture,class:"mypage-pic" %>
            </div>
          </div>
         <div>
            <div>犬愛をアピールしてね<span class="important-mark">必須</span></div>
-           <div class = "my-text">
-            <%= f.collection_select(:dog_love_id,DogLove.all, :id, :name, {}, {class:"select-box", id:"dog_love"}) %>
+           <div >
+            <%= f.collection_select(:dog_love_id,DogLove.all, :id, :name, {}, {class:"field", id:"dog_love"}) %>
            </div>
         </div>
         <div>
           <div>自己紹介<span class="important-mark">必須</span></div>
           <div class = "my-text">
-          <%= f.text_area :text, class:"introduce-text", placeholder:"例) 犬が大好きで幼い頃から飼育経験があります。等", maxlength:"400",autofocus: true %>
+          <%= f.text_area :text, class:"intro-field", placeholder:"例) 犬が大好きで幼い頃から飼育経験があります。等", maxlength:"400",autofocus: true %>
           </div>
         </div>
      </div>

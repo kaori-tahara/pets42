@@ -10,7 +10,7 @@
 <div class = "craving-new-main">
   <div class = "new-contens">
    <div class = "contens">
-    <h2>お散歩提供内容を記載してください</h2>
+    <h2 class ="title-top">お散歩提供内容を記載してください</h2>
     <%= form_with model:@craving, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
      <%#写真%>
@@ -35,7 +35,7 @@
           アピール文
           <span class="important-mark">必須</span>
         </div>
-        <%= f.text_area :text, class:"field", id:"craving-text", placeholder:"例）過去に犬を飼っていましたが、マンションに引越した為飼うことができません。お散歩の大変さも理解しているので、ぜひ手伝わせてください！等" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"ap-field", id:"craving-text", placeholder:"例）過去に犬を飼っていましたが、マンションに引越した為飼うことができません。お散歩の大変さも理解しているので、ぜひ手伝わせてください！等" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
      <%#title,text%>
