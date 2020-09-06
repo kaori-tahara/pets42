@@ -1,6 +1,6 @@
 class MypagesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     @mypage = Mypage.new
   end
@@ -19,7 +19,7 @@ class MypagesController < ApplicationController
     @mypage = user.mypage
     @craving_histories = CravingHistory.includes(:user).order('created_at DESC')
     @job_histories = JobHistory.includes(:user).order('created_at DESC')
-   end
+  end
 
   def edit
     @mypage = Mypage.find(params[:id])
@@ -31,7 +31,7 @@ class MypagesController < ApplicationController
       redirect_to pets_path
     else
       render :edit
-     end
+    end
   end
 
   private
