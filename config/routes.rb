@@ -20,11 +20,6 @@ Rails.application.routes.draw do
     resources :cravingnegotiations, only: [:index,:create]
   end
 
-
   resources :mypages 
- 
-
-
-
 
 end
