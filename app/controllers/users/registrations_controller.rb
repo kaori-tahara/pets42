@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def address_params
-    params.require(:address).permit(:zip, :prefecture, :city, :phone)
+    params.require(:address).permit(:zip, :prefecture_id, :city, :phone)
   end
 
   # GET /resource/sign_up

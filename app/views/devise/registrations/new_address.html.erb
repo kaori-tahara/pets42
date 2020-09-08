@@ -13,11 +13,11 @@
   </div>
   <div class ="ad-group">
      <div class ="ad-new">
-       <label>都道府県を入力してください</label>
+       <label>都道府県を選択してください</label>
        <span class="imp-mark">必須</span>
      </div>
      <div class= "newad-in">
-     <%= f.text_field :prefecture, placeholder:"都道府県を入力してください", class:"new-reg-in" %>
+      <%= f.collection_select(:prefecture_id,Prefecture.all, :id, :name, {}, {class:"new-reg-in", id:"prefecture"}) %>
      </div>
    </div>
    <div class ="ad-group">
@@ -26,7 +26,7 @@
        <span class="imp-mark">必須</span>
       </div>
       <div class= "newad-in">
-      <%= f.text_field :city,placeholder:"市町村を入力してください", class:"new-reg-in"%>
+      <%= f.text_field :city, placeholder:"市町村を入力してください", class:"new-reg-in"%>
       </div>
     </div>
     <div class ="ad-group">
