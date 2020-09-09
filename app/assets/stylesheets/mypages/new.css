@@ -7,7 +7,7 @@
 .intro-field{
   width: 80%;
   height: 8vh;
-  resize: none; 
+  /* resize: none;  */
 }
 
 .foot{
@@ -17,4 +17,8 @@
 
 .mypage-pic{
   margin-bottom: 3vh;
+}
+
+.my-pic{
+  max-width: 100%;
 }

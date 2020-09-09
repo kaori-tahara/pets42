@@ -1,7 +1,7 @@
 <div class = "my-main">
 <h2>変更箇所を記載してください</h2>
 <h3><%= current_user.nickname%>さんのマイページ</h3>
-  <%= form_with model:@mypage,class: 'mypage-new',local: true do |f| %> 
+  <%= form_with model:@mypage,class: 'mypage-new',id: 'mypage_picture',local: true do |f| %> 
    <%= render 'shared/error_messages', model: f.object %>  
    <div class = "my-contents">
     <div class ="up-content">
@@ -12,6 +12,8 @@
            <div >
             <%= f.file_field :mypage_picture,class:"mypage-pic" %>
            </div>
+           <div id="image-list" ></div>
+           <%= image_tag @mypage.mypage_picture,class:"my-pic", id: 'image' if @mypage.mypage_picture.present? %> 
          </div>
         <div>
            <div>犬愛をアピールしてね<span class="important-mark">必須</span></div>
