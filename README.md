@@ -159,14 +159,14 @@ top、詳細画面はどなたでも閲覧可能です。実際に散歩を依�
  dog_love
 
  #### 以下はactive_strage使用
- dog_picture
- craving_picture
- mypage_picture
+- dog_picture
+- craving_picture
+- mypage_picture
  
     
 
 
-## ローカルでの動作方法　あとで書き直し
+## ローカルでの動作方法
 - ruby 6.0.0使用
 - 本番環境(Heroku)のURL
   https://pets42-28316.herokuapp.com/
