@@ -3,7 +3,7 @@ class CravingsController < ApplicationController
   before_action :set_craving, only: [:show, :edit, :destroy, :update]
 
   def index
-    @cravings = Craving.includes(:user).order('created_at DESC')
+    @cravings = Craving.page(params[:page]).includes(:user).order('created_at DESC')
   end
 
   def new

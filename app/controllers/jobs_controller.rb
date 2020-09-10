@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :destroy, :update]
 
   def index
-    @jobs = Job.includes(:user).order('created_at DESC')
+    @jobs = Job.page(params[:page]).includes(:user).order('created_at DESC')
   end
 
   def new
