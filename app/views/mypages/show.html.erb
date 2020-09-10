@@ -27,30 +27,28 @@
       <div class ="history-past">
          <div class = "craving_history_past">
             <ul class ="history_list">
-             <li>お散歩受諾歴</li>
+             <li>散歩依頼歴</li>
                 <% @craving_histories.each do |craving_history| %> 
                     <%if @mypage.user_id == craving_history.user_id  %>
                  <li class = "my-his">
                      <% @crid = craving_history.craving_id%>
                      <%=Craving.find(@crid).working_date%>
                     <% @mylink = Craving.find(@crid).user_id%>
-                    <%= @my = User.find(@mylink).nickname%>さんと
-                     <%=link_to "交渉済み", mypage_path(@mylink)%></li>
+                     <%=link_to User.find(@mylink).nickname, mypage_path(@mylink), class:"mynego"%>さんに依頼済み</li>
                     <%end%>
                     <%end%>
             </ul>
           </div>
          <div class = "job_history_past">
             <ul class ="history_list">
-            <li>依頼受諾歴</li>
+            <li>散歩実施歴</li>
               <% @job_histories.each do |job_history| %>  
               <%if @mypage.user_id == job_history.user_id %>  
               <li class = "my-his">
                     <% @jobid = job_history.job_id%>
                    <%=Job.find(@jobid).working_date%>
                    <% @mylinkjob = Job.find(@jobid).user_id%>
-                   <%= @mynick = User.find(@mylinkjob).nickname%>さんと
-                    <%=link_to "交渉済み", mypage_path(@mylinkjob)%></li>
+                    <%=link_to User.find(@mylinkjob).nickname, mypage_path(@mylinkjob), class:"mynego"%>さんのお散歩を実施</li>
               <%end%>  
               <%end%>
             </ul>
