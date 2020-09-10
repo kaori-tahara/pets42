@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_one  :mypage
   has_many :jobs
   has_many :cravings
-  has_many :job_histories
-  has_many :craving_histories
   has_one  :address
+  has_many :job_histories,through: :jobs
+  has_many :craving_histories,through: :cravings
+  
 end

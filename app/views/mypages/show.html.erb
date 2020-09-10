@@ -27,26 +27,30 @@
       <div class ="history-past">
          <div class = "craving_history_past">
             <ul class ="history_list">
-             <li>お散歩実施実績</li>
+             <li>お散歩受諾歴</li>
                 <% @craving_histories.each do |craving_history| %> 
                     <%if @mypage.user_id == craving_history.user_id  %>
-                 <li class = "my-his"><%=craving_history.created_at.strftime('%Y/%m/%d')%>にお散歩しました</li>
-                   <%# <% craving_history.craving_id%>
-                   <%# <%  @craving_user = Craving.find(params[:id])%>
-                 <%# <li><%= @craving_user.user_id%> 
-                <%end%>
-               <%end%>
+                 <li class = "my-his">
+                     <% @crid = craving_history.craving_id%>
+                     <%=Craving.find(@crid).working_date%>
+                    <% @mylink = Craving.find(@crid).user_id%>
+                    <%= @my = User.find(@mylink).nickname%>さんと
+                     <%=link_to "交渉済み", mypage_path(@mylink)%></li>
+                    <%end%>
+                    <%end%>
             </ul>
           </div>
          <div class = "job_history_past">
             <ul class ="history_list">
-            <li>依頼実績</li>
+            <li>依頼受諾歴</li>
               <% @job_histories.each do |job_history| %>  
               <%if @mypage.user_id == job_history.user_id %>  
-              <li class = "my-his"><%=job_history.created_at.strftime('%Y/%m/%d')%>に依頼しました</li>
-                   <%# <% job_history.job_id%>
-                   <%# <% @job_user = Job.find(params[:id])%>
-                 <%# <li><%=  @job_user.user_id%>
+              <li class = "my-his">
+                    <% @jobid = job_history.job_id%>
+                   <%=Job.find(@jobid).working_date%>
+                   <% @mylinkjob = Job.find(@jobid).user_id%>
+                   <%= @mynick = User.find(@mylinkjob).nickname%>さんと
+                    <%=link_to "交渉済み", mypage_path(@mylinkjob)%></li>
               <%end%>  
               <%end%>
             </ul>

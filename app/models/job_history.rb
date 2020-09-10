@@ -1,4 +1,4 @@
 class JobHistory < ApplicationRecord
   belongs_to :job
-  belongs_to :user
+  has_one :user,through: :job
 end
