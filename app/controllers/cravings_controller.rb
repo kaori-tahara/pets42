@@ -1,6 +1,7 @@
 class CravingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_craving, only: [:show, :edit, :destroy, :update]
+  # before_action :search_craving, only: [:index, :search]
 
   def index
     @cravings = Craving.page(params[:page]).includes(:user).order('created_at DESC')
@@ -35,6 +36,10 @@ class CravingsController < ApplicationController
     end
   end
 
+  # def search
+  #   @results = @p.result.includes(:address)
+  # end
+
 
   private
 
@@ -45,5 +50,9 @@ class CravingsController < ApplicationController
   def set_craving
     @craving = Craving.find(params[:id])
   end
+
+  # def search_craving
+  #   @p = Craving.ransack(params[:q])  
+  # end
 
 end
