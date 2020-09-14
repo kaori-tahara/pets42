@@ -21,7 +21,4 @@ class Craving < ApplicationRecord
     validates :working_date
     validates :working_time_id
   end
-
-
-
 end

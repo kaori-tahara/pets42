@@ -1,10 +1,9 @@
 class CravingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_craving, only: [:show, :edit, :destroy, :update]
-  
+
   def index
     @cravings = Craving.page(params[:page]).includes(:user).order('created_at DESC')
-    
   end
 
   def new
@@ -36,7 +35,6 @@ class CravingsController < ApplicationController
     end
   end
 
-
   private
 
   def craving_params
@@ -46,6 +44,4 @@ class CravingsController < ApplicationController
   def set_craving
     @craving = Craving.find(params[:id])
   end
-
-
 end
