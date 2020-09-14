@@ -27,10 +27,10 @@ class User < ApplicationRecord
     validates :email,uniqueness: true
   end
 
-    validates :email,format: { with: /@.+/ }
+  validates :email,format: { with: /@.+/ }
 
-  # validates :password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'には英字と数字の両方を含めて設定してください' }
-  # validates :password_confirmation, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+  validates :password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'には英字と数字の両方を含めて設定してください' },on: :create
+  validates :password_confirmation,confirmation: true ,on: :create
 
 
   
