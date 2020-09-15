@@ -16,7 +16,7 @@ class Craving < ApplicationRecord
     validates :working_date
   end
 
-  with_options presence: true, numericality: { greater_than: 1 }do
+  with_options presence: true, numericality: { greater_than: 1 } do
     validates :experience_id
     validates :working_hour_id
     validates :working_time_id
