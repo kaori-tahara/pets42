@@ -175,6 +175,8 @@ belongs_to :user, optional: true
 - dog_picture
 - craving_picture
 - mypage_picture
+
+![logo](https://user-images.githubusercontent.com/68538917/93189858-a0dc8280-f77d-11ea-9b2b-e78bb5ebc5a4.png)
  
 
 
