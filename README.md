@@ -4,6 +4,8 @@
 #　デプロイ済みのURL
 https://pets42-28316.herokuapp.com/
 
+<img width="1438" alt="スクリーンショット 2020-09-15 17 56 03" src="https://user-images.githubusercontent.com/68538917/93189165-d03ebf80-f77c-11ea-8c0d-d39abc7a75d1.png">
+
 # テスト用アカウント
 - Basic認証のIDとパスワード
 - ID:admin
