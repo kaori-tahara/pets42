@@ -64,9 +64,13 @@
 <div class = "cr">
  <div class = "cr-offer-btn">
     <% if user_signed_in? && current_user.id == @job.user_id %>
-     <%= link_to '削除', job_path(@job.id) , method: :delete, class:'cr-destroy' %>
-     <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "cr-edit" %>
-     <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
+       <%if @job.job_history.present?%>
+         <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
+         <%else%>
+         <%= link_to '削除', job_path(@job.id) , method: :delete, class:'cr-destroy' %>
+         <%= link_to '編集', edit_job_path(@job.id), method: :get, class: "cr-edit" %>
+         <%= link_to '一覧へ戻る', jobs_path , class:'cravings-return-btn' %>
+       <%end %>
     <%else%>
          <% if @job.job_history == nil  %> 
             <%= link_to '申し込む',  job_jobnegotiations_path(@job.id), method: :get,class:"cr-nego-btn"%> 

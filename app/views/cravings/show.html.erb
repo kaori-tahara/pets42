@@ -58,11 +58,15 @@
 <div class = "cr">
    <div class ="cr-offer-btn">
      <% if user_signed_in? && current_user.id == @craving.user_id %>
-     <%= link_to '削除', craving_path(@craving.id) , method: :delete, class:'cr-destroy' %>
-     <%= link_to '編集', edit_craving_path(@craving.id), method: :get, class: "cr-edit" %>
-    <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+        <%if @craving.craving_history.present? %>
+         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+         <%else%>
+         <%= link_to '削除', craving_path(@craving.id) , method: :delete, class:'cr-destroy' %>
+         <%= link_to '編集', edit_craving_path(@craving.id), method: :get, class: "cr-edit" %>
+         <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
+        <% end %> 
      <%else%> 
-         <% if @craving.craving_history == nil  %> 
+          <% if @craving.craving_history == nil  %> 
             <%= link_to 'この方に散歩を依頼する',craving_cravingnegotiations_path(@craving.id), method: :get,class:"cr-nego-btn"%> 
             <%= link_to '一覧へ戻る', cravings_path , class:'cravings-return-btn' %>
              <%else%> 
