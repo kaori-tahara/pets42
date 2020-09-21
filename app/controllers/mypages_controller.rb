@@ -19,6 +19,7 @@ class MypagesController < ApplicationController
     @mypage = user.mypage
     @craving_histories = CravingHistory.includes(:user).order('created_at DESC')
     @job_histories = JobHistory.includes(:user).order('created_at DESC')
+    @calendars = Calendar.includes(:user)
   end
 
   def edit

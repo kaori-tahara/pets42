@@ -20,9 +20,8 @@ Rails.application.routes.draw do
     resources :cravingnegotiations, only: [:index,:create]
   end
 
-  resources :mypages
-
-  get 'cravings/search'
-  get 'jobs/search'
+  resources :mypages do
+    resources :calendars
+  end
 
 end

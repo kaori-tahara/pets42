@@ -57,7 +57,17 @@
 </div>
   <div class ="my-link-btn">
      <% if user_signed_in? && current_user.id == @mypage.user_id %>
-     <div><%= link_to "編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%></div>
+     <div><%= link_to "Mypageを編集する" ,"/mypages/#{@mypage.id}/edit", class:"cr-edit"%></div>
      <%end%>
   </div>
-  
+
+<%= link_to "予定を書く","/mypages/#{@mypage.id}/calendars/new"%>
+
+ <%=month_calendar events: @calendars do |date, calendars|%>
+   <%= date.day %> 
+  <% calendars.each do |calendar| %>
+    <div>
+      <%=  link_to calendar.title %>
+    </div>
+  <% end %>
+<% end %>

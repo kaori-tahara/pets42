@@ -5,6 +5,7 @@ class CreateMypages < ActiveRecord::Migration[6.0]
       t.integer :dog_love_id,null: false
       t.text :text,null: false
       
+      
 
       t.timestamps
     end
