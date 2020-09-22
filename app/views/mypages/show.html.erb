@@ -61,7 +61,28 @@
      <%end%>
   </div>
 
-<%= link_to "予定を書く",new_mypages_calendar_path%>
+<%= "予定を書く"%>
+<%= form_with(model: [@calendar,@mypage], local: true) do |form| %>
+   <div class="time">
+    <%= form.label :vlog_day %>
+    <%= form.datetime_select :vlog_day,:discard_hour => true,:discard_time => true %>
+  </div>
+
+  <div class="title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+<% end %>
 
  <%=month_calendar events: @calendars do |date, calendars|%>
    <%= date.day %> 

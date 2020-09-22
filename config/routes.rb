@@ -20,9 +20,7 @@ Rails.application.routes.draw do
     resources :cravingnegotiations, only: [:index,:create]
   end
 
-  resources :mypages 
-
-  namespace :mypages do
+  resources :mypages do
     resources :calendars
   end
 
