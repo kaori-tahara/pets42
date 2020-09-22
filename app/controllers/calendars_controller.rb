@@ -5,13 +5,13 @@ class CalendarsController < ApplicationController
 
   def create
     Calendar.create(calendar_params)
-    redirect_to  "/mypages/:mypage_id/calendars"
+    redirect_to   mypages_calendars_path
   end
 
 
     private
 
     def calendar_params
-      params.require(:calendar).permit(:title, :content,:vlog_day).merge(user_id: current_user.id, mypage_id: params[:mypage_id])
+      params.require(:calendar).permit(:title, :content,:vlog_day).merge(user_id: current_user.id)
     end
 end

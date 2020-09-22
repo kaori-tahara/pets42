@@ -61,7 +61,7 @@
      <%end%>
   </div>
 
-<%= link_to "予定を書く","/mypages/#{@mypage.id}/calendars/new"%>
+<%= link_to "予定を書く",new_mypages_calendar_path%>
 
  <%=month_calendar events: @calendars do |date, calendars|%>
    <%= date.day %> 
