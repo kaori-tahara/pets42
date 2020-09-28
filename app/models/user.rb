@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one  :address
   has_many :job_histories, through: :jobs
   has_many :craving_histories, through: :cravings
+  has_one :calendar, through: :mypage
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角を使用してください' } do
     validates :first_name
